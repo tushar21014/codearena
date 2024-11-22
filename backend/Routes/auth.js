@@ -12,7 +12,6 @@ const fetchuser = require('../middleware/fetchuser');
 const { json } = require('body-parser');
 const nodemailer = require('nodemailer');
 
-
 // To Create A user
 router.post('/createuser', [
   body('email', 'Please enter a valid email').isEmail(),
@@ -89,6 +88,8 @@ router.post('/login', [
       }
     }
 
+    const updateStatus = await User.findByIdAndUpdate({ _id: user._id }, { isOnline: true }) 
+    
     // console.log(data);
 
     const authToken = jwt.sign(data, Signature)

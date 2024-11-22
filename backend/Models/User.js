@@ -36,10 +36,18 @@ const userSchema = new Schema({
     isFree:{
         type: Boolean,
         default: true,
+        required: true
     },
     date: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: true
+
+    },
+    friends: {
+        type: Array,
+        default: [],
+        required: true
     },
 });
 

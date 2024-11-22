@@ -6,12 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../css/login.css';  
+import { useRouter } from 'next/navigation';
+
 // import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     
     const [value, setValue] = useState('');
-
+    const router = useRouter();
 
     useEffect(() => {
         setValue(localStorage.getItem('email') || '');
@@ -50,6 +52,7 @@ const Login = () => {
                 localStorage.setItem('id', json.id);
                 // calltoast("Logged In successfully!", "success")
                 // navigate('/')
+                router.push('/game')
             }
         } catch (error) {
             console.log(error);
