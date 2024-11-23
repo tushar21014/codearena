@@ -1,5 +1,5 @@
 Title,Difficulty,Accuracy,Content,URL
-Indexes of Subarray Sum,MediumAccuracy:,16.5%Submissions:,"Given an unsorted array arr containing only non-negative integers, your task is to find a continuous subarray (a contiguous sequence of elements) whose sum equals a specified value target. You need to return the 1-based indices of the leftmost and rightmost elements of this subarray. Examples: Input: arr[] = [1,2,3,7,5], target = 12
+Indexes of Subarray Sum,Medium,16.5,"Given an unsorted array arr containing only non-negative integers, your task is to find a continuous subarray (a contiguous sequence of elements) whose sum equals a specified value target. You need to return the 1-based indices of the leftmost and rightmost elements of this subarray. Examples: Input: arr[] = [1,2,3,7,5], target = 12
 Output: [2, 4]
 Explanation: The sum of elements from 2nd to 4th position is 12. Input: arr[] = [1,2,3,4,5,6,7,8,9,10], target = 15,
 Output: [1, 5]
@@ -10,7 +10,7 @@ Output: [-1]
 Explanation: There is no subarray with sum 2. Constraints:
 1 <= arr.size()<= 106
 0 <= arr[i] <= 103",https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1?page=1&sortBy=submissions
-Missing in Array,EasyAccuracy:,29.59%Submissions:,"You are given an array arr of size n - 1 that contains distinct integers in the range from 1 to n (inclusive). This array represents a permutation of the integers from 1 to n with one element missing. Your task is to identify and return the missing element. Examples: Input: arr[] = [1, 2, 3, 5]
+Missing in Array,Easy,29.59,"You are given an array arr of size n - 1 that contains distinct integers in the range from 1 to n (inclusive). This array represents a permutation of the integers from 1 to n with one element missing. Your task is to identify and return the missing element. Examples: Input: arr[] = [1, 2, 3, 5]
 Output: 4
 Explanation: All the numbers from 1 to 5 are present except 4. Input: arr[] = [8, 2, 4, 5, 3, 7, 1]
 Output: 6
@@ -19,15 +19,15 @@ Output: 2
 Explanation: Only 1 is present so the missing element is 2. Constraints:
 1 ≤ arr.size() ≤ 106
 1 ≤ arr[i] ≤ arr.size() + 1",https://www.geeksforgeeks.org/problems/missing-number-in-array1416/1?page=1&sortBy=submissions
-Kadane's Algorithm,MediumAccuracy:,36.28%Submissions:,"Given an integer array arr[]. You need to find and return the maximum sum possible from all the subarrays. Examples: Input: Output: 11
+Kadane's Algorithm,Medium,36.28,"Given an integer array arr[]. You need to find and return the maximum sum possible from all the subarrays. Examples: Input: Output: 11
 Explanation: The subarray {7, -1, 2, 3} has the largest sum 11. Input: Output: -2
 Explanation: The subarray {-2} has the largest sum -2. Input: Output: 25
 Explanation: The subarray {5, 4, 1, 7, 8} has the largest sum 25. Constraints:
 1 ≤ arr.size() ≤ 105",https://www.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1?page=1&sortBy=submissions
-Minimum Jumps,MediumAccuracy:,11.91%Submissions:,"Given an array arr[] of non-negative integers. Each array element represents the maximum length of the jumps that can be made forward from that element. This means if arr[i] = x, then we can jump any distance y such that y ≤ x. Find the minimum number of jumps to reach the end of the array starting from the first element. If an element is 0, then you cannot move through that element. Note:  Return -1 if you can't reach the end of the array. Examples :  Input: Output: 3 Explanation: Output: 2 
+Minimum Jumps,Medium,11.91,"Given an array arr[] of non-negative integers. Each array element represents the maximum length of the jumps that can be made forward from that element. This means if arr[i] = x, then we can jump any distance y such that y ≤ x. Find the minimum number of jumps to reach the end of the array starting from the first element. If an element is 0, then you cannot move through that element. Note:  Return -1 if you can't reach the end of the array. Examples :  Input: Output: 3 Explanation: Output: 2 
 Explanation: First we jump from the 1st to 2nd element and then jump to the last element. Output: -1
 Explanation: We cannot go anywhere from the 1st element. Constraints:",https://www.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1?page=1&sortBy=submissions
-Second Largest,EasyAccuracy:,26.72%Submissions:,"Given an array of positive integers arr[], return the second largest element from the array. If the second largest element doesn't exist then return -1. Examples: Input: arr[] = [12, 35, 1, 10, 34, 1]
+Second Largest,Easy,26.72,"Given an array of positive integers arr[], return the second largest element from the array. If the second largest element doesn't exist then return -1. Examples: Input: arr[] = [12, 35, 1, 10, 34, 1]
 Output: 34
 Explanation: The largest element of the array is 35 and the second largest element is 34. Input: arr[] = [10, 5, 10]
 Output: 5
@@ -36,7 +36,7 @@ Output: -1
 Explanation: The largest element of the array is 10 and the second largest element does not exist. Constraints:
 2 ≤ arr.size() ≤ 105
 1 ≤ arr[i] ≤ 105",https://www.geeksforgeeks.org/problems/second-largest3735/1?page=1&sortBy=submissions
-Array Duplicates,EasyAccuracy:,18.95%Submissions:,"Given an array arr of integers, find all the elements that occur more than once in the array. Return the result in ascending order. If no element repeats, return an empty array. Examples: Input: arr[] = [2, 3, 1, 2, 3]
+Array Duplicates,Easy,18.95,"Given an array arr of integers, find all the elements that occur more than once in the array. Return the result in ascending order. If no element repeats, return an empty array. Examples: Input: arr[] = [2, 3, 1, 2, 3]
 Output: [2, 3] 
 Explanation: 2 and 3 occur more than once in the given array. Input: arr[] = [0, 3, 1, 2]
 Output: []
@@ -44,7 +44,7 @@ Explanation: There is no repeating element in the array, so the output is empty.
 Output: [] 
 Explanation: There is single element in the array. Therefore output is empty. Constraints:
 1 <= arr.size() <= 106",https://www.geeksforgeeks.org/problems/find-duplicates-in-an-array/1?page=1&sortBy=submissions
-Array Leaders,EasyAccuracy:,29.94%Submissions:,"You are given an array arr of positive integers. Your task is to find all the leaders in the array. An element is considered a leader if it is greater than or equal to all elements to its right. The rightmost element is always a leader. Examples: Input: arr = [16, 17, 4, 3, 5, 2]
+Array Leaders,Easy,29.94,"You are given an array arr of positive integers. Your task is to find all the leaders in the array. An element is considered a leader if it is greater than or equal to all elements to its right. The rightmost element is always a leader. Examples: Input: arr = [16, 17, 4, 3, 5, 2]
 Output: [17, 5, 2]
 Explanation: Note that there is nothing greater on the right side of 17, 5 and, 2. Input: arr = [10, 4, 2, 4, 1]
 Output: [10, 4, 4, 1]
@@ -55,14 +55,14 @@ Output: [30, 10, 10, 5]
 Explanation: When an array is sorted in non-increasing order, all elements are leaders. Constraints:
 1 <= arr.size() <= 106
 0 <= arr[i] <= 106",https://www.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1?page=1&sortBy=submissions
-"Sort 0s, 1s and 2s",EasyAccuracy:,50.58%Submissions:,"Given an array arr[] containing only 0s, 1s, and 2s. Sort the array in ascending order. Examples: Input: arr[] = [0, 1, 2, 0, 1, 2]
+"Sort 0s, 1s and 2s",Easy,50.58,"Given an array arr[] containing only 0s, 1s, and 2s. Sort the array in ascending order. Examples: Input: arr[] = [0, 1, 2, 0, 1, 2]
 Output: [0, 0, 1, 1, 2, 2]
 Explanation: 0s 1s and 2s are segregated into ascending order. Input: arr[] = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]
 Output: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2]
 Explanation: 0s 1s and 2s are segregated into ascending order. Constraints:
 1 <= arr.size() <= 106
 0 <= arr[i] <= 2",https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1?page=1&sortBy=submissions
-Majority Element,MediumAccuracy:,27.82%Submissions:,"Given an array arr. Find the majority element in the array. If no majority exists, return -1. A majority element in an array is an element that appears strictly more than arr.size()/2 times in the array. Examples: Input: arr[] = [3, 1, 3, 3, 2]
+Majority Element,Medium,27.82,"Given an array arr. Find the majority element in the array. If no majority exists, return -1. A majority element in an array is an element that appears strictly more than arr.size()/2 times in the array. Examples: Input: arr[] = [3, 1, 3, 3, 2]
 Output: 3
 Explanation: Since, 3 is present more than n/2 times, so it is the majority element. Input: arr[] = [7]
 Output: 7
@@ -72,7 +72,7 @@ Explanation: Since, no element is present more than n/2 times, so there is no ma
 Expected Auxiliary Space: O(1) Constraints:
 1 ≤ arr.size() ≤ 105
 0 ≤ arr[i]≤ 105",https://www.geeksforgeeks.org/problems/majority-element-1587115620/1?page=1&sortBy=submissions
-Kth Smallest,MediumAccuracy:,35.17%Submissions:,"Given an array arr[] and an integer k where k is smaller than the size of the array, the task is to find the kth smallest element in the given array. Follow up: Don't solve it using the inbuilt sort function. Examples : Input: arr[] = [7, 10, 4, 3, 20, 15], k = 3
+Kth Smallest,Medium,35.17,"Given an array arr[] and an integer k where k is smaller than the size of the array, the task is to find the kth smallest element in the given array. Follow up: Don't solve it using the inbuilt sort function. Examples : Input: arr[] = [7, 10, 4, 3, 20, 15], k = 3
 Output: 7
 Explanation: 3rd smallest element in the given array is 7. Input: arr[] = [2, 3, 1, 20, 15], k = 4 
 Output: 15
@@ -80,7 +80,7 @@ Explanation: 4th smallest element in the given array is 15. Expected Time Comple
 1 <= arr.size <= 106
 1<= arr[i] <= 106
 1 <= k <= n",https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1?page=1&sortBy=submissions
-Minimize the Heights II,MediumAccuracy:,15.06%Submissions:,"Given an array arr[] denoting heights of N towers and a positive integer K. For each tower, you must perform exactly one of the following operations exactly once. Increase the height of the tower by K Decrease the height of the tower by K Find out the minimum possible difference between the height of the shortest and tallest towers after you have modified each tower. You can find a slight modification of the problem here.
+Minimize the Heights II,Medium,15.06,"Given an array arr[] denoting heights of N towers and a positive integer K. For each tower, you must perform exactly one of the following operations exactly once. Increase the height of the tower by K Decrease the height of the tower by K Find out the minimum possible difference between the height of the shortest and tallest towers after you have modified each tower. You can find a slight modification of the problem here.
 Note: It is compulsory to increase or decrease the height by K for each tower. After the operation, the resultant array should not contain any negative integers. Examples : Input: k = 2, arr[] = {1, 5, 8, 10}
 Output: 5
 Explanation: The array can be modified as {1+k, 5-k, 8-k, 10-k} = {3, 3, 6, 8}.The difference between the largest and the smallest is 8-3 = 5. Input: k = 3, arr[] = {3, 9, 12, 16, 20}
@@ -90,7 +90,7 @@ Expected Auxiliary Space: O(n) Constraints
 1 ≤ k ≤ 107
 1 ≤ n ≤ 105
 1 ≤ arr[i] ≤ 107",https://www.geeksforgeeks.org/problems/minimize-the-heights3351/1?page=1&sortBy=submissions
-Parenthesis Checker,EasyAccuracy:,28.56%Submissions:,"You are given a string s representing an expression containing various types of brackets: {}, (), and []. Your task is to determine whether the brackets in the expression are balanced. A balanced expression is one where every opening bracket has a corresponding closing bracket in the correct order. Examples : Input: s = ""{([])}""
+Parenthesis Checker,Easy,28.56,"You are given a string s representing an expression containing various types of brackets: {}, (), and []. Your task is to determine whether the brackets in the expression are balanced. A balanced expression is one where every opening bracket has a corresponding closing bracket in the correct order. Examples : Input: s = ""{([])}""
 Output: true
 Explanation:
 - In this expression, every opening bracket has a corresponding closing bracket. Input: s = ""()""
@@ -102,7 +102,7 @@ Explanation:
 - This expression contains only one type of bracket, the parentheses ( and ). Constraints:
 1 ≤ s.size() ≤ 106
 s[i] ∈ {'{', '}', '(', ')', '[', ']'}",https://www.geeksforgeeks.org/problems/parenthesis-checker2744/1?page=1&sortBy=submissions
-Equilibrium Point,EasyAccuracy:,28.13%Submissions:,"Given an array arr of non-negative numbers. The task is to find the first equilibrium point in an array. The equilibrium point in an array is an index (or position) such that the sum of all elements before that index is the same as the sum of elements after it. Note: Return equilibrium point in 1-based indexing. Return -1 if no such point exists.  Examples: Input: arr[] = [1, 3, 5, 2, 2]
+Equilibrium Point,Easy,28.13,"Given an array arr of non-negative numbers. The task is to find the first equilibrium point in an array. The equilibrium point in an array is an index (or position) such that the sum of all elements before that index is the same as the sum of elements after it. Note: Return equilibrium point in 1-based indexing. Return -1 if no such point exists.  Examples: Input: arr[] = [1, 3, 5, 2, 2]
 Output: 3 
 Explanation: The equilibrium point is at position 3 as the sum of elements before it (1+3) = sum of elements after it (2+2). Input: arr[] = [0, 1, 0]
 Output: 2
@@ -111,7 +111,7 @@ Explanation: There is no equilibrium point in the given array. Expected Time Com
 Expected Auxiliary Space: O(1) Constraints:
 3 <= arr.size() <= 106
 0 <= arr[i] <= 109",https://www.geeksforgeeks.org/problems/equilibrium-point-1587115620/1?page=1&sortBy=submissions
-Count Inversions,MediumAccuracy:,16.93%Submissions:,"Given an array of integers arr[]. Find the Inversion Count in the array.
+Count Inversions,Medium,16.93,"Given an array of integers arr[]. Find the Inversion Count in the array.
 T wo elements arr[i] and arr[j] form an inversion if arr[i] > arr[j] and i < j. Inversion Count: For an array, inversion count indicates how far (or close) the array is from being sorted. If the array is already sorted then the inversion count is 0.
 If an array is sorted in the reverse order then the inversion count is the maximum.  Examples: Input: arr[] = [2, 4, 1, 3, 5]
 Output: 3
@@ -120,7 +120,7 @@ Output: 0
 Explanation: As the sequence is already sorted so there is no inversion count. Input: arr[] = [10, 10, 10]
 Output: 0
 Explanation: As all the elements of array are same, so there is no inversion count. Constraints:",https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1?page=1&sortBy=submissions
-Check for BST,EasyAccuracy:,25.37%Submissions:,"Given the root of a binary tree. Check whether it is a BST or not.
+Check for BST,Easy,25.37,"Given the root of a binary tree. Check whether it is a BST or not.
 Note: We are considering that BSTs can not contain duplicate Nodes. A BST is defined as follows: The left subtree of a node contains only nodes with keys less than the node's key. The right subtree of a node contains only nodes with keys greater than the node's key. Examples: Input: root[] = [2, 1, 3, N, N, N, 5]
    2
  /    \
@@ -145,7 +145,7 @@ Since the node with value 7 has right subtree nodes with keys less than 7, this 
 9 25
 Output: false
 Explanation: The node is present in the right subtree of 10, but it is smaller than 10. Constraints:",https://www.geeksforgeeks.org/problems/check-for-bst/1?page=1&sortBy=submissions
-Binary Search,EasyAccuracy:,44.32%Submissions:,"Given a sorted array arr and an integer k, find the position(0-based indexing) at which k is present in the array using binary search. Examples: Input: arr[] = [1, 2, 3, 4, 5], k = 4
+Binary Search,Easy,44.32,"Given a sorted array arr and an integer k, find the position(0-based indexing) at which k is present in the array using binary search. Examples: Input: arr[] = [1, 2, 3, 4, 5], k = 4
 Output: 3
 Explanation: 4 appears at index 3. Input: arr[] = [11, 22, 33, 44, 55], k = 445
 Output: -1
@@ -155,7 +155,7 @@ Explanation: 1 appears at index 0. Constraints:
 1 <= arr.size() <= 105
 1 <= arr[i] <= 106
 1 <= k <= 106",https://www.geeksforgeeks.org/problems/binary-search-1587115620/1?page=1&sortBy=submissions
-Left View of Binary Tree,EasyAccuracy:,33.74%Submissions:,"Examples : Input: root[] = [1, 2, 3, 4, 5, N, N]
+Left View of Binary Tree,Easy,33.74,"Examples : Input: root[] = [1, 2, 3, 4, 5, N, N]
 
 Output: [1, 2, 4]
 Explanation: From the left side of the tree, only the nodes 1, 2, and 4 are visible. Input: root[] = [1, 2, 3, N, N, 4, N, N, 5, N, N]
@@ -164,14 +164,14 @@ Explanation: From the left side of the tree, the nodes 1, 3, 4, and 5 are visibl
 Output: [] Constraints:
 0 <= number of nodes <= 106
 0 <= node -> data <= 105",https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1?page=1&sortBy=submissions
-Missing And Repeating,EasyAccuracy:,24.83%Submissions:,"Given an unsorted array arr of positive integers. One number a from the set [1, 2,....,n] is missing and one number b occurs twice in the array. Find numbers a and b. Note: The test cases are generated such that there always exists one missing and one repeating number within the range [1,n]. Examples: Input: arr[] = [2, 2]
+Missing And Repeating,Easy,24.83,"Given an unsorted array arr of positive integers. One number a from the set [1, 2,....,n] is missing and one number b occurs twice in the array. Find numbers a and b. Note: The test cases are generated such that there always exists one missing and one repeating number within the range [1,n]. Examples: Input: arr[] = [2, 2]
 Output: [2, 1]
 Explanation: Repeating number is 2 and smallest positive missing number is 1. Input: arr[] = [1, 3, 3] 
 Output: [3, 2]
 Explanation: Repeating number is 3 and smallest positive missing number is 2. Input: arr[] = [4, 3, 6, 2, 1, 1] Output: [1, 5] Explanation: Repeating number is 1 and the missing number is 5. Constraints:
 2 ≤ arr.size() ≤ 106
 1 ≤ arr[i] ≤ arr.size()",https://www.geeksforgeeks.org/problems/find-missing-and-repeating2512/1?page=1&sortBy=submissions
-Peak element,BasicAccuracy:,38.86%Submissions:,"Given an 0-indexed array of integers arr[], find its peak element and return its index. An element is considered to be peak if its value is greater than or equal to the values of its adjacent elements (if they exist). Note: The output will be ""true"" if the index returned by your function is correct; otherwise, it will be ""false"". Examples : Input: arr = [1, 2, 3]
+Peak element,Basic,38.86,"Given an 0-indexed array of integers arr[], find its peak element and return its index. An element is considered to be peak if its value is greater than or equal to the values of its adjacent elements (if they exist). Note: The output will be ""true"" if the index returned by your function is correct; otherwise, it will be ""false"". Examples : Input: arr = [1, 2, 3]
 Output: true
 Explanation: If the index returned is 2, then the output printed will be 1. Since arr[2] = 3 is greater than its adjacent elements, and there is no element after it, we can consider it as a peak element. No other index satisfies the same property, so answer will be printed as 0. Input: arr = [1, 1, 1, 2, 1, 1, 1]
 Output: true
@@ -180,19 +180,19 @@ Output: true
 Explanation: In this case, all elements are peak elements. Constraints:
 1 ≤ arr.size() ≤ 106
 0 ≤ arr[i] ≤ 106",https://www.geeksforgeeks.org/problems/peak-element/1?page=1&sortBy=submissions
-Undirected Graph Cycle,MediumAccuracy:,30.13%Submissions:," Examples: Input: adj = [[1], [0,2,4], [1,3], [2,4], [1,3]] 
+Undirected Graph Cycle,Medium,30.13," Examples: Input: adj = [[1], [0,2,4], [1,3], [2,4], [1,3]] 
 Output: 1
 Explanation: Input: adj = [[], [2], [1,3], [2]] 0
 Explanation: Constraints:
 1 ≤ adj.size() ≤ 105",https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1?page=1&sortBy=submissions
-Longest Sub-Array with Sum K,MediumAccuracy:,24.64%Submissions:,"Given an array arr[] containing integers and an integer k, your task is to find the length of the longest subarray where the sum of its elements is equal to the given value k. It is guaranteed that a valid subarray exists. Examples: Input: arr[] = [10, 5, 2, 7, 1, 9], k = 15
+Longest Sub-Array with Sum K,Medium,24.64,"Given an array arr[] containing integers and an integer k, your task is to find the length of the longest subarray where the sum of its elements is equal to the given value k. It is guaranteed that a valid subarray exists. Examples: Input: arr[] = [10, 5, 2, 7, 1, 9], k = 15
 Output: 4
 Explanation: The subarray [5, 2, 7, 1] has a sum of 15 and length 4. Input: arr[] = [-1, 2, -3], k = -2
 Output: 3
 Explanation: The subarray [-1, 2, -3] has a sum of -2 and length 3. Input: arr[] = [1, -1, 5, -2, 3], k = 3
 Output: 4
 Explanation: The subarray [1, -1, 5, -2] has a sum of 3 and a length 4. Constraints:",https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?page=2&sortBy=submissions
-Minimum Platforms,MediumAccuracy:,26.84%Submissions:,"You are given the arrival times arr[] and departure times dep[] of all trains that arrive at a railway station on the same day. Your task is to determine the minimum number of platforms required at the station to ensure that no train is kept waiting. Examples: Input: arr[] = [900, 940, 950, 1100, 1500, 1800], dep[] = [910, 1200, 1120, 1130, 1900, 2000]
+Minimum Platforms,Medium,26.84,"You are given the arrival times arr[] and departure times dep[] of all trains that arrive at a railway station on the same day. Your task is to determine the minimum number of platforms required at the station to ensure that no train is kept waiting. Examples: Input: arr[] = [900, 940, 950, 1100, 1500, 1800], dep[] = [910, 1200, 1120, 1130, 1900, 2000]
 Output: 3
 Explanation: There are three trains during the time 9:40 to 12:00. So we need a minimum of 3 platforms. Input: arr[] = [900, 1235, 1100], dep[] = [1000, 1240, 1200]
 Output: 1
@@ -202,7 +202,7 @@ Explanation: All 3 trains have to be there from 11:00 to 11:30 Constraints:
 1≤ number of trains ≤ 50000
 0000 ≤ arr[i] ≤ dep[i] ≤ 2359
 Note: Time intervals are in the 24-hour format(HHMM) , where the first two characters represent hour (between 00 to 23 ) and the last two characters represent minutes (this will be <= 59 and >= 0).",https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1?page=2&sortBy=submissions
-Remove loop in Linked List,MediumAccuracy:,27.66%Submissions:,"Note: Given an integer, pos (1 based index)  Position of the node to which the last node links back if there is a loop. If the linked list does not have any loop, then pos = 0. The generated output will be true if your submitted code is correct, otherwise, false. Examples: Input: Linked list: 1->3->4, pos = 2
+Remove loop in Linked List,Medium,27.66,"Note: Given an integer, pos (1 based index)  Position of the node to which the last node links back if there is a loop. If the linked list does not have any loop, then pos = 0. The generated output will be true if your submitted code is correct, otherwise, false. Examples: Input: Linked list: 1->3->4, pos = 2
 Output: true
 Explanation: The linked list looks like
 
@@ -217,7 +217,7 @@ Explanation: The linked list looks like
 A loop is present. If you remove it successfully, the answer will be true. Expected Time Complexity: O(n)
 Expected Space  Constraints:
 1 ≤ size of linked list ≤ 105",https://www.geeksforgeeks.org/problems/remove-loop-in-linked-list/1?page=2&sortBy=submissions
-Two sum -Pairs with 0 Sum,EasyAccuracy:,31.49%Submissions:,"Given an integer array arr, return all the unique pairs [arr[i], arr[j]] such that i != j and arr[i] + arr[j] == 0. Note: The pairs must be returned in sorted order, the solution array should also be sorted, and the answer must not contain any duplicate pairs. Examples: Input: arr = [-1, 0, 1, 2, -1, -4]
+Two sum -Pairs with 0 Sum,Easy,31.49,"Given an integer array arr, return all the unique pairs [arr[i], arr[j]] such that i != j and arr[i] + arr[j] == 0. Note: The pairs must be returned in sorted order, the solution array should also be sorted, and the answer must not contain any duplicate pairs. Examples: Input: arr = [-1, 0, 1, 2, -1, -4]
 Output: [[-1, 1]]
 Explanation: arr[0] + arr[2] = (-1)+ 1 = 0.
 arr[2] + arr[4] = 1 + (-1) = 0.
@@ -227,7 +227,7 @@ Explanation: The distinct triplets are [-1, 1] and [-6, 6]. Expected Time Comple
 Expected Auxiliary Space: O(n). Constraints:
 3 <= arr.size <= 105
 -105 <= arr[i] <= 105",https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1?page=2&sortBy=submissions
-0 - 1 Knapsack Problem,MediumAccuracy:,31.76%Submissions:,"You are given the weights and values of items, and you need to put these items in a knapsack of capacity capacity to achieve the maximum total value in the knapsack. Each item is available in only one quantity. In other words, you are given two integer arrays val[] and wt[], which represent the values and weights associated with items, respectively. You are also given an integer capacity, which represents the knapsack capacity. Your task is to find the maximum sum of values of a subset of val[] such that the sum of the weights of the corresponding subset is less than or equal to capacity. You cannot break an item; you must either pick the entire item or leave it (0-1 property). Examples : Input: capacity = 4, val[] = [1, 2, 3], wt[] = [4, 5, 1]
+0 - 1 Knapsack Problem,Medium,31.76,"You are given the weights and values of items, and you need to put these items in a knapsack of capacity capacity to achieve the maximum total value in the knapsack. Each item is available in only one quantity. In other words, you are given two integer arrays val[] and wt[], which represent the values and weights associated with items, respectively. You are also given an integer capacity, which represents the knapsack capacity. Your task is to find the maximum sum of values of a subset of val[] such that the sum of the weights of the corresponding subset is less than or equal to capacity. You cannot break an item; you must either pick the entire item or leave it (0-1 property). Examples : Input: capacity = 4, val[] = [1, 2, 3], wt[] = [4, 5, 1]
 Output: 3
 Explanation: Choose the last item, which weighs 1 unit and has a value of 3. Input: capacity = 3, val[] = [1, 2, 3], wt[] = [4, 5, 6]
 Output: 0
@@ -235,7 +235,7 @@ Explanation: Every item has a weight exceeding the knapsack's capacity (3). Inpu
 Output: 50
 Explanation: Choose the second item (value 40, weight 4) and the fourth item (value 50, weight 3) for a total weight of 7, which exceeds the capacity. Instead, pick the last item (value 50, weight 3) for a total value of 50. Expected Time Complexity: O(n*capacity).
 Expected Auxiliary Space: O(n*capacity) Constraints:",https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1?page=2&sortBy=submissions
-Detect Loop in linked list,MediumAccuracy:,43.49%Submissions:,"Note: You need to return a boolean value true if there is a loop, otherwise false. The following is an internal representation of every test case (three inputs).
+Detect Loop in linked list,Medium,43.49,"Note: You need to return a boolean value true if there is a loop, otherwise false. The following is an internal representation of every test case (three inputs).
 A LinkedList and a pos (1-based index)-Position of the node to which the last node links back if there is a loop. If the linked list does not have any loop, then pos = 0. Examples: Input: LinkedList: 1->3->4
 Output: true
 Explanation:
@@ -248,7 +248,7 @@ There is no loop exists. Input: LinkedList: 1->2->3->4
 Output: true
 Explanation: Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(1) Constraints:",https://www.geeksforgeeks.org/problems/detect-loop-in-linked-list/1?page=2&sortBy=submissions
-Trapping Rain Water,HardAccuracy:,33.14%Submissions:,"Given an array arr[] with non-negative integers representing the height of blocks. If the width of each block is 1, compute how much water can be trapped between the blocks during the rainy season.  Examples: Input: arr[] = [3, 0, 0, 2, 0, 4]
+Trapping Rain Water,Hard,33.14,"Given an array arr[] with non-negative integers representing the height of blocks. If the width of each block is 1, compute how much water can be trapped between the blocks during the rainy season.  Examples: Input: arr[] = [3, 0, 0, 2, 0, 4]
 Output: 10
 Explanation: Input: arr[] = [7, 4, 0, 9]
 Output: 10
@@ -262,7 +262,7 @@ Explanation:
 No water will be trapped. Constraints:
 3 < arr.size() < 104
 0 < arr[i] < 103",https://www.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1?page=2&sortBy=submissions
-BFS of graph,EasyAccuracy:,44.09%Submissions:,"Given a connected undirected graph represented by an adjacency list adj, which is a vector of vectors where each adj[i] represents the list of vertices connected to vertex i. Perform a Breadth First Traversal (BFS) starting from vertex 0, visiting vertices from left to right according to the adjacency list, and return a list containing the BFS traversal of the graph. Examples: Input: adj = [[2,3,1], [0], [0,4], [0], [2]] Output: [0, 2, 3, 1, 4]
+BFS of graph,Easy,44.09,"Given a connected undirected graph represented by an adjacency list adj, which is a vector of vectors where each adj[i] represents the list of vertices connected to vertex i. Perform a Breadth First Traversal (BFS) starting from vertex 0, visiting vertices from left to right according to the adjacency list, and return a list containing the BFS traversal of the graph. Examples: Input: adj = [[2,3,1], [0], [0,4], [0], [2]] Output: [0, 2, 3, 1, 4]
 Explanation: Starting from 0, the BFS traversal will follow these steps:
 Visit 0 → Output: 0
 Visit 2 (first neighbor of 0) → Output: 0, 2
@@ -287,7 +287,7 @@ Visit vertex 3 (next neighbor of 1) → Output: [0, 1, 2, 3]
 Visit vertex 4 (neighbor of 3) → Final Output: [0, 1, 2, 3, 4] Constraints:
 1 ≤ adj.size() ≤ 104
 1 ≤ adj[i][j] ≤ 104",https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1?page=2&sortBy=submissions
-Perfect Sum Problem,MediumAccuracy:,20.58%Submissions:,"Given an array arr of non-negative integers and an integer target, the task is to count all subsets of the array whose sum is equal to the given target. Note: It is guaranteed that the product of the length of arr and target will not exceed 106 Examples: Input: arr[] = [5, 2, 3, 10, 6, 8], target = 10
+Perfect Sum Problem,Medium,20.58,"Given an array arr of non-negative integers and an integer target, the task is to count all subsets of the array whose sum is equal to the given target. Note: It is guaranteed that the product of the length of arr and target will not exceed 106 Examples: Input: arr[] = [5, 2, 3, 10, 6, 8], target = 10
 Output: 3
 Explanation: The subsets {5, 2, 3}, {2, 8}, and {10} sum up to the target 10. Input: arr[] = [2, 5, 1, 4, 3], target = 10
 Output: 3
@@ -299,19 +299,19 @@ Explanation: The empty subset is the only subset with a sum of 0. Constraints:
 1 ≤ arr.size() ≤ 103
 0 ≤ arr[i] ≤ 103
 0 ≤ target ≤ 103",https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1?page=2&sortBy=submissions
-Cycle in a Directed Graph,MediumAccuracy:,27.88%Submissions:,"Given a Directed Graph with V vertices (Numbered from 0 to V-1) and E edges, check whether it contains any cycle or not.
+Cycle in a Directed Graph,Medium,27.88,"Given a Directed Graph with V vertices (Numbered from 0 to V-1) and E edges, check whether it contains any cycle or not.
 The graph is represented as an adjacency list, where adj[i] contains a list of vertices that are directly reachable from vertex i. Specifically, adj[i][j] represents an edge from vertex i to vertex j. Example 1: Input: Output: 1
 Explanation: 3 -> 3 is a cycle Example 2: Input: Output: 0
 Explanation: no cycle in the graph Constraints:
 1 ≤ V, E ≤ 105",https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1?page=2&sortBy=submissions
-Sum of Series,BasicAccuracy:,23.81%Submissions:,"Examples: Input: n = 1
+Sum of Series,Basic,23.81,"Examples: Input: n = 1
 Output: 1
 Explanation: For n = 1, the sum will be 1. Input: n = 5
 Output: 15
 Explanation: For n = 5, sum will be 15. 1 + 2 + 3 + 4 + 5 = 15. Expected Time Complexity: O(1)
 Expected Auxiliary Space: O(1) Constraints:
 1 <= n <= 109",https://www.geeksforgeeks.org/problems/sum-of-series2811/1?page=2&sortBy=submissions
-Next Greater Element,MediumAccuracy:,32.95%Submissions:,"Given an array arr[ ] of integers, the task is to find the next greater element for each element of the array in order of their appearance in the array. Next greater element of an element in the array is the nearest element on the right which is greater than the current element.
+Next Greater Element,Medium,32.95,"Given an array arr[ ] of integers, the task is to find the next greater element for each element of the array in order of their appearance in the array. Next greater element of an element in the array is the nearest element on the right which is greater than the current element.
 If there does not exist next greater of current element, then next greater element for current element is -1. For example, next greater of the last element is always -1. Examples Input: arr[] = [1, 3, 2, 4]
 Output: [3, 4, 4, -1]
 Explanation: The next larger element to 1 is 3, 3 is 4, 2 is 4 and for 4, since it doesn't exist, it is -1. Input: arr[] = [6, 8, 0, 1, 3]
@@ -323,7 +323,7 @@ Output: [-1, -1, -1, -1]
 Explanation: There is no greater element for any of the elements in the array, so all are -1. Constraints:
 1 ≤ arr.size() ≤ 106
 0 ≤ arr[i] ≤ 109",https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1?page=2&sortBy=submissions
-Power of 2,EasyAccuracy:,32.58%Submissions:,"Given a non-negative integer n. The task is to check if it is a power of 2.  Examples Input: n = 8
+Power of 2,Easy,32.58,"Given a non-negative integer n. The task is to check if it is a power of 2.  Examples Input: n = 8
 Output: true
 Explanation: 8 is equal to 2 raised to 3 (23 = 8). Input: n = 98
 Output: false
@@ -332,7 +332,7 @@ Output: true
 Explanation: Expected Time Complexity: O(log n).
 Expected Auxiliary Space: O(1). Constraints:
 0 ≤ n < 109",https://www.geeksforgeeks.org/problems/power-of-2-1587115620/1?page=2&sortBy=submissions
-Tree Boundary Traversal,MediumAccuracy:,23.33%Submissions:,"Left Boundary: This includes all the nodes on the path from the root to the leftmost leaf node. You must prefer the left child over the right child when traversing. Do not include leaf nodes in this section. Leaf Nodes: All leaf nodes, in left-to-right order, that are not part of the left or right boundary. Reverse Right Boundary: This includes all the nodes on the path from the rightmost leaf node to the root, traversed in reverse order. You must prefer the right child over the left child when traversing. Do not include the root in this section if it was already included in the left boundary. Note: If the root doesn't have a left subtree or right subtree, then the root itself is the left or right boundary.  Examples: Input: root[] = [1, 2, 3, 4, 5, 6, 7, N, N, 8, 9, N, N, N, N] 
+Tree Boundary Traversal,Medium,23.33,"Left Boundary: This includes all the nodes on the path from the root to the leftmost leaf node. You must prefer the left child over the right child when traversing. Do not include leaf nodes in this section. Leaf Nodes: All leaf nodes, in left-to-right order, that are not part of the left or right boundary. Reverse Right Boundary: This includes all the nodes on the path from the rightmost leaf node to the root, traversed in reverse order. You must prefer the right child over the left child when traversing. Do not include the root in this section if it was already included in the left boundary. Note: If the root doesn't have a left subtree or right subtree, then the root itself is the left or right boundary.  Examples: Input: root[] = [1, 2, 3, 4, 5, 6, 7, N, N, 8, 9, N, N, N, N] 
  1 
   / \
   2 3  
@@ -370,7 +370,7 @@ Left boundary: [1] (as there is no left subtree)
 Leaf nodes: [4]
 Right boundary: [3, 2] (in reverse order)
 Final traversal: [1, 4, 3, 2] Constraints:",https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1?page=2&sortBy=submissions
-Common in 3 Sorted Arrays,EasyAccuracy:,22.16%Submissions:,"Note:  Input: arr1 = [1, 5, 10, 20, 40, 80] , arr2 = [6, 7, 20, 80, 100] , arr3 = [3, 4, 15, 20, 30, 70, 80, 120]
+Common in 3 Sorted Arrays,Easy,22.16,"Note:  Input: arr1 = [1, 5, 10, 20, 40, 80] , arr2 = [6, 7, 20, 80, 100] , arr3 = [3, 4, 15, 20, 30, 70, 80, 120]
 Output: [20, 80]
 Explanation: 20 and 80 are the only common elements in arr, brr and crr. Input: arr1 = [1, 2, 3, 4, 5] , arr2 = [6, 7] , arr3 = [8,9,10]
 Output: [-1]
@@ -379,7 +379,7 @@ Output: [1, 2] Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(n) Constraints:
 1 <= arr1.size(), arr2.size(), arr3.size() <= 105
 -105 <= arr1i , arr2i , 1arr3i <= 105",https://www.geeksforgeeks.org/problems/common-elements1132/1?page=2&sortBy=submissions
-Kth from End of Linked List,EasyAccuracy:,41.18%Submissions:,"Given the head of a linked list and the number k, Your task is to find the kth node from the end. If k is more than the number of nodes, then the output should be -1. Examples Input: LinkedList: 1->2->3->4->5->6->7->8->9, k = 2
+Kth from End of Linked List,Easy,41.18,"Given the head of a linked list and the number k, Your task is to find the kth node from the end. If k is more than the number of nodes, then the output should be -1. Examples Input: LinkedList: 1->2->3->4->5->6->7->8->9, k = 2
 Output: 8
 Explanation: The given linked list is 1->2->3->4->5->6->7->8->9. The 2nd node from end is 8. Input: LinkedList: 10->5->100->5, k = 5
 Output: -1
@@ -388,7 +388,7 @@ Expected Auxiliary Space: O(1). Constraints:
 1 <= number of nodes <= 106
 1 <= node->data , x <= 106
 1 <= k <= 106",https://www.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1?page=2&sortBy=submissions
-Rotate Array,MediumAccuracy:,37.06%Submissions:,"Given an unsorted array arr[]. Rotate the array to the left (counter-clockwise direction) by d steps, where d is a positive integer. Do the mentioned change in the array in place. Note: Consider the array as circular. Examples : Input: arr[] = [1, 2, 3, 4, 5], d = 2
+Rotate Array,Medium,37.06,"Given an unsorted array arr[]. Rotate the array to the left (counter-clockwise direction) by d steps, where d is a positive integer. Do the mentioned change in the array in place. Note: Consider the array as circular. Examples : Input: arr[] = [1, 2, 3, 4, 5], d = 2
 Output: [3, 4, 5, 1, 2]
 Explanation: when rotated by 2 elements, it becomes 3 4 5 1 2. Input: arr[] = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], d = 3
 Output: [8, 10, 12, 14, 16, 18, 20, 2, 4, 6]
@@ -396,7 +396,7 @@ Explanation: when rotated by 3 elements, it becomes 8 10 12 14 16 18 20 2 4 6. I
 Output: [3, 9, 1, 7]
 Explanation: when we rotate 9 times, we'll get 3 9 1 7 as resultant array. Constraints:
 1 <= arr.size(), d <= 105",https://www.geeksforgeeks.org/problems/rotate-array-by-n-elements-1587115621/1?page=2&sortBy=submissions
-Array Search,BasicAccuracy:,40.95%Submissions:,"Given an array, arr of n integers, and an integer element x, find whether element x is present in the array. Return the index of the first occurrence of x in the array, or -1 if it doesn't exist. Examples: Input: arr[] = [1, 2, 3, 4], x = 3
+Array Search,Basic,40.95,"Given an array, arr of n integers, and an integer element x, find whether element x is present in the array. Return the index of the first occurrence of x in the array, or -1 if it doesn't exist. Examples: Input: arr[] = [1, 2, 3, 4], x = 3
 Output: 2
 Explanation: There is one test case with array as [1, 2, 3 4] and element to be searched as 3. Since 3 is present at index 2, the output is 2. Input: arr[] = [10, 8, 30, 4, 5], x = 5
 Output: 4
@@ -407,14 +407,14 @@ Expected Auxiliary Space: O(1).  Constraints:
 1 <= arr.size <= 106
 0 <= arr[i] <= 106
 0 <= x <= 105",https://www.geeksforgeeks.org/problems/search-an-element-in-an-array-1587115621/1?page=2&sortBy=submissions
-Union of Arrays with Duplicates,EasyAccuracy:,42.22%Submissions:,"Given two arrays a[] and b[], the task is to find the number of elements in the union between these two arrays. Note: Elements are not necessarily distinct. Examples Input: a[] = [1, 2, 3, 4, 5], b[] = [1, 2, 3]
+Union of Arrays with Duplicates,Easy,42.22,"Given two arrays a[] and b[], the task is to find the number of elements in the union between these two arrays. Note: Elements are not necessarily distinct. Examples Input: a[] = [1, 2, 3, 4, 5], b[] = [1, 2, 3]
 Output: 5
 Explanation: 1, 2, 3, 4 and 5 are the elements which comes in the union setof both arrays. So count is 5. Input: a[] = [85, 25, 1, 32, 54, 6], b[] = [85, 2]
 Output: 7
 Explanation: 85, 25, 1, 32, 54, 6, and 2 are the elements which comes in the union set of both arrays. So count is 7. Input: a[] = [1, 2, 1, 1, 2], b[] = [2, 2, 1, 2, 1]
 Output: 2
 Explanation: We need to consider only distinct. So count is 2. Constraints:",https://www.geeksforgeeks.org/problems/union-of-two-arrays3538/1?page=2&sortBy=submissions
-Maximum Product Subarray,MediumAccuracy:,18.09%Submissions:,"Given an array arr[] that contains positive and negative integers (may contain 0 as well). Find the maximum product that we can get in a subarray of arr. Examples Input: arr[] = [-2, 6, -3, -10, 0, 2]
+Maximum Product Subarray,Medium,18.09,"Given an array arr[] that contains positive and negative integers (may contain 0 as well). Find the maximum product that we can get in a subarray of arr. Examples Input: arr[] = [-2, 6, -3, -10, 0, 2]
 Output: 180
 Explanation: The subarray with maximum product is {6, -3, -10} with product = 6 * (-3) * (-10) = 180. Input: arr[] = [-1, -3, -10, 0, 60]
 Output: 60
@@ -422,7 +422,7 @@ Explanation: The subarray with maximum product is {60}. Input: arr[] = [2, 3, 4]
 Output: 24 Explanation: For an array with all positive elements, the result is product of all elements. Constraints:
 1 ≤ arr.size() ≤ 106
 -10  ≤  arr[i]  ≤  10",https://www.geeksforgeeks.org/problems/maximum-product-subarray3604/1?page=2&sortBy=submissions
-Array Subset,BasicAccuracy:,44.05%Submissions:,"Given two arrays: a[] and b[], where both arrays may contain duplicate elements. The task is to determine whether array b is a subset of array a. It's important to note that both arrays can be unsorted. Additionally, each occurrence of a duplicate element within an array is considered as a separate element of the set. Examples: Input: a[] = [11, 7, 1, 13, 21, 3, 7, 3], b[] = [11, 3, 7, 1, 7]
+Array Subset,Basic,44.05,"Given two arrays: a[] and b[], where both arrays may contain duplicate elements. The task is to determine whether array b is a subset of array a. It's important to note that both arrays can be unsorted. Additionally, each occurrence of a duplicate element within an array is considered as a separate element of the set. Examples: Input: a[] = [11, 7, 1, 13, 21, 3, 7, 3], b[] = [11, 3, 7, 1, 7]
 Output: Yes
 Explanation: b[] is a subset of a[] Input: a[] = [1, 2, 3, 4, 4, 5, 6], b[] = [1, 2, 4]
 Output: Yes
@@ -431,13 +431,13 @@ Output: No
 Explanation: b[] is not a subset of a[] Constraints:
 1 <= a.size(), b.size() <= 105
 0 <= a[i], b[j] <= 106",https://www.geeksforgeeks.org/problems/array-subset-of-another-array2317/1?page=3&sortBy=submissions
-Reverse a String,BasicAccuracy:,69.49%Submissions:,"You are given a string s, and your task is to reverse the string. Examples: Input: s = ""Geeks""
+Reverse a String,Basic,69.49,"You are given a string s, and your task is to reverse the string. Examples: Input: s = ""Geeks""
 Output: ""skeeG"" Input: s = ""for""
 Output: ""rof"" Input: s = ""a""
 Output: ""a"" Constraints:
 1 <= s.size() <= 106
 s contains only alphabetic characters (both uppercase and lowercase).",https://www.geeksforgeeks.org/problems/reverse-a-string/1?page=3&sortBy=submissions
-Floor in a Sorted Array,EasyAccuracy:,33.75%Submissions:,"Given a sorted array arr[] (with unique elements) and an integer k, find the index (0-based) of the largest element in arr[] that is less than or equal to k. This element is called the ""floor"" of k. If such an element does not exist, return -1. Input: arr[] = [1, 2, 8, 10, 11, 12, 19], k = 0
+Floor in a Sorted Array,Easy,33.75,"Given a sorted array arr[] (with unique elements) and an integer k, find the index (0-based) of the largest element in arr[] that is less than or equal to k. This element is called the ""floor"" of k. If such an element does not exist, return -1. Input: arr[] = [1, 2, 8, 10, 11, 12, 19], k = 0
 Output: -1
 Explanation: No element less than 0 is found. So output is -1. Input: arr[] = [1, 2, 8, 10, 11, 12, 19], k = 5
 Output: 1
@@ -447,7 +447,7 @@ Explanation: Largest Number less than or equal to 1 is 1 , whose index is 0. Con
 1 ≤ arr.size() ≤ 106
 1 ≤ arr[i] ≤ 106
 0 ≤ k ≤ arr[n-1]",https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1?page=3&sortBy=submissions
-Check Equal Arrays,BasicAccuracy:,42.18%Submissions:,"Given two arrays arr1 and arr2 of equal size, the task is to find whether the given arrays are equal. Two arrays are said to be equal if both contain the same set of elements, arrangements (or permutations) of elements may be different though.
+Check Equal Arrays,Basic,42.18,"Given two arrays arr1 and arr2 of equal size, the task is to find whether the given arrays are equal. Two arrays are said to be equal if both contain the same set of elements, arrangements (or permutations) of elements may be different though.
 Note: If there are repetitions, then counts of repeated elements must also be the same for two arrays to be equal. Examples: Input: arr1[] = [1, 2, 5, 4, 0], arr2[] = [2, 4, 5, 0, 1]
 Output: true
 Explanation: Both the array can be rearranged to [0,1,2,4,5] Input: arr1[] = [1, 2, 5], arr2[] = [2, 4, 15]
@@ -456,7 +456,7 @@ Explanation: arr1[] and arr2[] have only one common value. Expected Time Complex
 Expected Space Complexity: O(n) Constraints:
 1<= arr1.size, arr2.size<=107
 0<=arr1[], arr2[]<=109",https://www.geeksforgeeks.org/problems/check-if-two-arrays-are-equal-or-not3847/1?page=3&sortBy=submissions
-Palindrome String,EasyAccuracy:,51.21%Submissions:,"You are given a string s. Your task is to determine if the string is a palindrome. A string is considered a palindrome if it reads the same forwards and backwards. Examples : Input: s = ""abba""
+Palindrome String,Easy,51.21,"You are given a string s. Your task is to determine if the string is a palindrome. A string is considered a palindrome if it reads the same forwards and backwards. Examples : Input: s = ""abba""
 Output: true
 Explanation: ""abba"" reads the same forwards and backwards, so it is a palindrome. Input: s = ""abc"" 
 Output: false
@@ -467,7 +467,7 @@ Output: true
 Explanation: ""acbca"" reads the same forwards and backwards, so it is a palindrome. Constraints:
 1 ≤ s.size() ≤ 106
 The string s contains only lowercase letters (a-z).",https://www.geeksforgeeks.org/problems/palindrome-string0817/1?page=3&sortBy=submissions
-Largest Element in Array,BasicAccuracy:,67.48%Submissions:,"Given an array arr[]. The task is to find the largest element and return it. Examples: Input: arr = [1, 8, 7, 56, 90]
+Largest Element in Array,Basic,67.48,"Given an array arr[]. The task is to find the largest element and return it. Examples: Input: arr = [1, 8, 7, 56, 90]
 Output: 90
 Explanation: The largest element of the given array is 90. Input: arr = [5, 5, 5, 5]
 Output: 5
@@ -476,7 +476,7 @@ Output: 10
 Explanation: There is only one element which is the largest. Constraints:
 1 <= arr.size()<= 106
 0 <= arr[i] <= 106",https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1?page=3&sortBy=submissions
-K Sized Subarray Maximum,MediumAccuracy:,26.04%Submissions:,"Given an array arr[] of integers and an integer k, your task is to find the maximum value for each contiguous subarray of size k. The output should be an array of maximum values corresponding to each contiguous subarray. Examples: Input: arr[] = [1, 2, 3, 1, 4, 5, 2, 3, 6], k = 3
+K Sized Subarray Maximum,Medium,26.04,"Given an array arr[] of integers and an integer k, your task is to find the maximum value for each contiguous subarray of size k. The output should be an array of maximum values corresponding to each contiguous subarray. Examples: Input: arr[] = [1, 2, 3, 1, 4, 5, 2, 3, 6], k = 3
 Output: [3, 3, 4, 5, 5, 5, 6] 
 Explanation: 
 1st contiguous subarray = [1 2 3] max = 3
@@ -501,7 +501,7 @@ When k = 1, each element in the array is its own subarray, so the output is simp
 1 ≤ arr.size() ≤ 106
 1 ≤ k ≤ arr.size()
 0 ≤ arr[i] ≤ 109",https://www.geeksforgeeks.org/problems/maximum-of-all-subarrays-of-size-k3101/1?page=3&sortBy=submissions
-Middle of a Linked List,EasyAccuracy:,57.93%Submissions:,"Given the head of a linked list, the task is to find the middle. For example, the middle of 1-> 2->3->4->5 is 3. If there are two middle nodes (even count), return the second middle. For example, middle of 1->2->3->4->5->6 is 4. Linked list: 1->2->3->4->5
+Middle of a Linked List,Easy,57.93,"Given the head of a linked list, the task is to find the middle. For example, the middle of 1-> 2->3->4->5 is 3. If there are two middle nodes (even count), return the second middle. For example, middle of 1->2->3->4->5->6 is 4. Linked list: 1->2->3->4->5
 Output: 3
 
 Explanation: The given linked list is Linked list: 2->4->6->7->5->1
@@ -510,7 +510,7 @@ Output: 7
 Explanation: The given linked list is Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(1) Constraints:
 1 <= no. of nodes <= 105",https://www.geeksforgeeks.org/problems/finding-middle-element-in-a-linked-list/1?page=3&sortBy=submissions
-Reverse Words,EasyAccuracy:,56.08%Submissions:,"Given a string s, reverse the string without reversing its individual words. Words are separated by spaces. Note: The string may contain leading or trailing spaces, or multiple spaces between two words. The returned string should only have a single space separating the words, and no extra spaces should be included. Examples : Input: s = "" i like this program very much ""
+Reverse Words,Easy,56.08,"Given a string s, reverse the string without reversing its individual words. Words are separated by spaces. Note: The string may contain leading or trailing spaces, or multiple spaces between two words. The returned string should only have a single space separating the words, and no extra spaces should be included. Examples : Input: s = "" i like this program very much ""
 Output: ""much very program this like i""
 Explanation: After removing extra spaces and reversing the whole string (not individual words), the input string becomes ""much very program this like i"". Input: s = "" pqr mno ""
 Output: ""mno pqr""
@@ -519,7 +519,7 @@ Output: ""a""
 Explanation: The input string contains only one word with extra spaces around it. After removing the extra spaces, the output is ""a"".Constraints: Constraints:
 1 <= s.size() <= 106
 String s contains only lowercase English alphabets and spaces.",https://www.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1?page=3&sortBy=submissions
-Largest subarray with 0 sum,MediumAccuracy:,41.84%Submissions:,"Given an array arr containing both positive and negative integers, the task is to compute the length of the largest subarray that has a sum of 0. Examples: Input: arr[] = [15, -2, 2, -8, 1, 7, 10, 23]
+Largest subarray with 0 sum,Medium,41.84,"Given an array arr containing both positive and negative integers, the task is to compute the length of the largest subarray that has a sum of 0. Examples: Input: arr[] = [15, -2, 2, -8, 1, 7, 10, 23]
 Output: 5
 Explanation: The largest subarray with a sum of 0 is [-2, 2, -8, 1, 7]. Input: arr[] = [2, 10, 4]
 Output: 0
@@ -528,14 +528,14 @@ Output: 5
 Explanation: The subarray is [0, -4, 3, 1, 0]. Constraints:
 1 ≤ arr.size() ≤ 106
 −103 ≤ arr[i] ≤ 103, for each valid i",https://www.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1?page=3&sortBy=submissions
-Union of Two Sorted Arrays with Duplicate Elements,MediumAccuracy:,31.39%Submissions:,"Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order. Examples: Input: a[] = [1, 2, 3, 4, 5], b[] = [1, 2, 3, 6, 7] Output: 1 2 3 4 5 6 7 Explanation: Distinct elements including both the arrays are: 1 2 3 4 5 6 7. Input: a[] = [2, 2, 3, 4, 5], b[] = [1, 1, 2, 3, 4]
+Union of Two Sorted Arrays with Duplicate Elements,Medium,31.39,"Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order. Examples: Input: a[] = [1, 2, 3, 4, 5], b[] = [1, 2, 3, 6, 7] Output: 1 2 3 4 5 6 7 Explanation: Distinct elements including both the arrays are: 1 2 3 4 5 6 7. Input: a[] = [2, 2, 3, 4, 5], b[] = [1, 1, 2, 3, 4]
 Output: 1 2 3 4 5
 Explanation: Distinct elements including both the arrays are: 1 2 3 4 5. Input: a[] = [1, 1, 1, 1, 1], b[] = [2, 2, 2, 2, 2]
 Output: 1 2
 Explanation: Distinct elements including both the arrays are: 1 2. Constraints:
 1  <=  a.size(), b.size()  <=  105
 -109  <=  a[i] , b[i]  <=  109",https://www.geeksforgeeks.org/problems/union-of-two-sorted-arrays-1587115621/1?page=3&sortBy=submissions
-Count Digits,EasyAccuracy:,30.45%Submissions:,"Given a positive integer n, count the number of digits in n that divide n evenly (i.e., without leaving a remainder). Return the total number of such digits. Examples : Input: n = 12
+Count Digits,Easy,30.45,"Given a positive integer n, count the number of digits in n that divide n evenly (i.e., without leaving a remainder). Return the total number of such digits. Examples : Input: n = 12
 Output: 2
 Explanation: 1, 2 when both divide 12 leaves remainder 0. Input: n = 2446
 Output: 1
@@ -543,7 +543,7 @@ Explanation: Here among 2, 4, 6 only 2 divides 2446 evenly while 4 and 6 do not.
 Output: 0
 Explanation: 2 and 3, none of them divide 23 evenly. Constraints:
 1<= n <=105",https://www.geeksforgeeks.org/problems/count-digits5716/1?page=3&sortBy=submissions
-Smallest Positive Missing Number,MediumAccuracy:,25.13%Submissions:,"You are given an integer array arr[]. Your task is to find the smallest positive number missing from the array. Examples: Input: arr[] = [2, -3, 4, 1, 1, 7]
+Smallest Positive Missing Number,Medium,25.13,"You are given an integer array arr[]. Your task is to find the smallest positive number missing from the array. Examples: Input: arr[] = [2, -3, 4, 1, 1, 7]
 Output: 3
 Explanation: Smallest positive missing number is 3. Input: arr[] = [5, 3, 2, 5, 1]
 Output: 4
@@ -552,7 +552,7 @@ Output: 1
 Explanation: Smallest positive missing number is 1. Constraints:  
 1 <= arr.size() <= 105
 -106 <= arr[i] <= 106",https://www.geeksforgeeks.org/problems/smallest-positive-missing-number-1587115621/1?page=3&sortBy=submissions
-Palindrome Linked List,MediumAccuracy:,41.48%Submissions:,"Examples: Input: LinkedList: 1->2->1->1->2->1
+Palindrome Linked List,Medium,41.48,"Examples: Input: LinkedList: 1->2->1->1->2->1
 Output: true
 Explanation: The given linked list is 1->2->1->1->2->1 , which is a palindrome and Hence, the output is true. Input: LinkedList: 1->2->3->4
 Output: false
@@ -560,7 +560,7 @@ Explanation: The given linked list is 1->2->3->4, which is not a palindrome and 
 Expected Auxiliary Space: O(1)  Constraints:
 1 <= number of nodes <= 105
 1 ≤ node->data ≤ 103",https://www.geeksforgeeks.org/problems/check-if-linked-list-is-pallindrome/1?page=3&sortBy=submissions
-Top View of Binary Tree,MediumAccuracy:,38.43%Submissions:,"Top view will be: 4 2 1 3 7
+Top View of Binary Tree,Medium,38.43,"Top view will be: 4 2 1 3 7
 Note: Return nodes from leftmost node to rightmost node. Also if 2 nodes are outside the shadow of the tree and are at same position then consider the left ones only(i.e. leftmost). 
 For ex - 1 2 3 N 4 5 N 6 N 7 N 8 N 9 N N N N N will give 8 2 1 3 as answer. Here 8 and 9 are on the same position but 9 will get shadowed. Example 1: Input:
   1
@@ -576,7 +576,7 @@ Output: 40 20 10 30 100 Since this is a function problem. You don't have to take
 Expected Auxiliary Space: O(N). Constraints:
 1 ≤ N ≤ 105
 1 ≤ Node Data ≤ 105",https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1?page=3&sortBy=submissions
-Nth Fibonacci Number,EasyAccuracy:,22.3%Submissions:,"Examples : Input: n = 5
+Nth Fibonacci Number,Easy,22.3,"Examples : Input: n = 5
 Output: 5
 Explanation: The 5th Fibonacci number is 5. Input: n = 0
 Output: 1 
@@ -584,7 +584,7 @@ Explanation: The 0th Fibonacci number is 0. Input: n = 1
 Output: 1
 Explanation: The 1st Fibonacci number is 1. Constraints:
 0 ≤ n ≤ 30",https://www.geeksforgeeks.org/problems/nth-fibonacci-number1335/1?page=3&sortBy=submissions
-Anagram,EasyAccuracy:,44.93%Submissions:,"Given two strings s1 and s2 consisting of lowercase characters. The task is to check whether two given strings are an anagram of each other or not. An anagram of a string is another string that contains the same characters, only the order of characters can be different. For example, act and tac are an anagram of each other. Strings s1 and s2 can only contain lowercase alphabets. Note: You can assume both the strings s1 & s2 are non-empty. Examples : Input: s1 = ""geeks"", s2 = ""kseeg""
+Anagram,Easy,44.93,"Given two strings s1 and s2 consisting of lowercase characters. The task is to check whether two given strings are an anagram of each other or not. An anagram of a string is another string that contains the same characters, only the order of characters can be different. For example, act and tac are an anagram of each other. Strings s1 and s2 can only contain lowercase alphabets. Note: You can assume both the strings s1 & s2 are non-empty. Examples : Input: s1 = ""geeks"", s2 = ""kseeg""
 Output: true
 Explanation: Both the string have same characters with same frequency. So, they are anagrams. Input: s1 = ""allergy"", s2 = ""allergic""
 Output: false
@@ -592,7 +592,7 @@ Explanation: Characters in both the strings are not same, so they are not anagra
 Output: true
 Explanation: Character in both the strings are same, so they are anagrams. Constraints:
 1 ≤ s1.size(), s2.size() ≤ 105",https://www.geeksforgeeks.org/problems/anagram-1587115620/1?page=3&sortBy=submissions
-Reverse array in groups,BasicAccuracy:,37.48%Submissions:,"Given an array arr of positive integers. Reverse every sub-array group of size k. Examples: Input: k = 3, arr= [1, 2, 3, 4, 5]
+Reverse array in groups,Basic,37.48,"Given an array arr of positive integers. Reverse every sub-array group of size k. Examples: Input: k = 3, arr= [1, 2, 3, 4, 5]
 Output: [3, 2, 1, 5, 4]
 Explanation: First group consists of elements 1, 2, 3. Second group consists of 4,5. Input: k = 5, arr = [5, 6, 8, 9]
 Output: [9, 8, 6, 5]
@@ -600,7 +600,7 @@ Explnation: Since k is greater than array size, the entire array is reversed. Ex
 Expected Auxiliary Space: O(1) Constraints:
 1 ≤ arr.size(), k ≤ 107
 1 ≤ arr[i] ≤ 1018",https://www.geeksforgeeks.org/problems/reverse-array-in-groups0255/1?page=3&sortBy=submissions
-Find triplets with zero sum,MediumAccuracy:,25.81%Submissions:,"Given an array arr[] of integers, determine whether it contains a triplet whose sum equals zero. Return true if such a triplet exists, otherwise, return false. Examples: Input: arr[] = [0, -1, 2, -3, 1]
+Find triplets with zero sum,Medium,25.81,"Given an array arr[] of integers, determine whether it contains a triplet whose sum equals zero. Return true if such a triplet exists, otherwise, return false. Examples: Input: arr[] = [0, -1, 2, -3, 1]
 Output: true
 Explanation: The triplet [0, -1, 1] has a sum equal to zero. Input: arr[] = [1, 2, 3]
 Output: false
@@ -608,7 +608,7 @@ Explanation: No triplet with a sum of zero exists. Input: arr[] = [-5, 3, 2, -1,
 Output: true
 Explanation: The triplet [-5, 3, 2] has a sum equal to zero. Constraints:
 1 <= arr.size() <= 103",https://www.geeksforgeeks.org/problems/find-triplets-with-zero-sum/1?page=3&sortBy=submissions
-Power Of Numbers,MediumAccuracy:,20.22%Submissions:,"Given a number n, find the value of n raised to the power of its own reverse. Note: The result will always fit into a 32-bit signed integer. Examples: Input: n = 2
+Power Of Numbers,Medium,20.22,"Given a number n, find the value of n raised to the power of its own reverse. Note: The result will always fit into a 32-bit signed integer. Examples: Input: n = 2
 Output: 4
 Explanation: The reverse of 2 is 2, and 22 = 4. Input: n = 10
 Output: 10
@@ -616,7 +616,7 @@ Explanation: The reverse of 10 is 1 (leading zero is discarded), and 101 = 10. I
 Output: 3
 Explanation: The reverse of 3 is 3, and 33 = 27. Constraints:
 1 <= n <= 10",https://www.geeksforgeeks.org/problems/power-of-numbers-1587115620/1?page=3&sortBy=submissions
-Balanced Tree Check,EasyAccuracy:,43.15%Submissions:,"Given a binary tree, determine if it is height-balanced. A binary tree is considered height-balanced if the absolute difference in heights of the left and right subtrees is at most 1 for every node in the tree. Examples: Input: root[] = [1, 2, N, N, 3]
+Balanced Tree Check,Easy,43.15,"Given a binary tree, determine if it is height-balanced. A binary tree is considered height-balanced if the absolute difference in heights of the left and right subtrees is at most 1 for every node in the tree. Examples: Input: root[] = [1, 2, N, N, 3]
       1
     /
    2
@@ -642,7 +642,7 @@ Output: false
 Explanation: The height difference between the left and right subtrees at node 2 is 2, which exceeds 1. Hence, the tree is not balanced. Constraints:
 1 <=number of nodes <= 105
 1 <= node->data <= 100",https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1?page=4&sortBy=submissions
-Row with max 1s,MediumAccuracy:,33.09%Submissions:,"You are given a 2D binary array arr[][] consisting of only 1s and 0s. Each row of the array is sorted in non-decreasing order. Your task is to find and return the index of the first row that contains the maximum number of 1s. If no such row exists, return -1. Note: Examples: Input: arr[][] = [[0,1,1,1], [0,0,1,1], [1,1,1,1], [0,0,0,0]]
+Row with max 1s,Medium,33.09,"You are given a 2D binary array arr[][] consisting of only 1s and 0s. Each row of the array is sorted in non-decreasing order. Your task is to find and return the index of the first row that contains the maximum number of 1s. If no such row exists, return -1. Note: Examples: Input: arr[][] = [[0,1,1,1], [0,0,1,1], [1,1,1,1], [0,0,0,0]]
 Output: 2
 Explanation: Row 2 contains the most number of 1s (4 1s). Hence, the output is 2. Input: arr[][] = [[0,0], [1,1]]
 Output: 1
@@ -651,7 +651,7 @@ Output: -1
 Explanation: No row contains any 1s, so the output is -1. Constraints:
 1 ≤ arr.size(), arr[i].size() ≤ 103
 0 ≤ arr[i][j] ≤ 1 ",https://www.geeksforgeeks.org/problems/row-with-max-1s0023/1?page=4&sortBy=submissions
-Frequencies of Limited Range Array Elements,EasyAccuracy:,27.64%Submissions:,"You are given an array arr[] containing positive integers. The elements in the array arr[] range from 1 to n (where n is the size of the array), and some numbers may be repeated or absent. Your task is to count the frequency of all numbers in the range 1 to n and return an array of size n such that result[i] represents the frequency of the number i (1-based indexing). Examples Input: arr[] = [2, 3, 2, 3, 5]
+Frequencies of Limited Range Array Elements,Easy,27.64,"You are given an array arr[] containing positive integers. The elements in the array arr[] range from 1 to n (where n is the size of the array), and some numbers may be repeated or absent. Your task is to count the frequency of all numbers in the range 1 to n and return an array of size n such that result[i] represents the frequency of the number i (1-based indexing). Examples Input: arr[] = [2, 3, 2, 3, 5]
 Output: [0, 2, 2, 0, 1]
 Explanation: We have: 1 occurring 0 times, 2 occurring 2 times, 3 occurring 2 times, 4 occurring 0 times, and 5 occurring 1 time. Input: arr[] = [3, 3, 3, 3]
 Output: [0, 0, 4, 0]
@@ -660,7 +660,7 @@ Output: [1]
 Explanation: We have: 1 occurring 1 time, and there are no other numbers between 1 and the size of the array. Constraints:
 1 ≤ arr.size() ≤ 106
 1 ≤ arr[i] ≤ arr.size()",https://www.geeksforgeeks.org/problems/frequency-of-array-elements-1587115620/1?page=4&sortBy=submissions
-Longest Increasing Subsequence,MediumAccuracy:,32.8%Submissions:,"Given an array arr[] of integers, the task is to find the length of the Longest Strictly Increasing Subsequence (LIS). A subsequence is considered strictly increasing if each element in the subsequence is strictly less than the next element. Examples: Input: arr[] = [5, 8, 3, 7, 9, 1]
+Longest Increasing Subsequence,Medium,32.8,"Given an array arr[] of integers, the task is to find the length of the Longest Strictly Increasing Subsequence (LIS). A subsequence is considered strictly increasing if each element in the subsequence is strictly less than the next element. Examples: Input: arr[] = [5, 8, 3, 7, 9, 1]
 Output: 3
 Explanation: The longest strictly increasing subsequence could be [5, 7, 9], which has a length of 3. Input: arr[] = [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]
 Output: 6
@@ -669,7 +669,7 @@ Output: 3
 Explanation: The longest strictly increasing subsequence could be [3, 10, 20], which has a length of 3. Input: arr[] = [3, 2]
 Output: 1
 Explanation: Since there is no strictly increasing subsequence, the longest subsequence is any single element, thus the length is 1. Constraints:",https://www.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1?page=4&sortBy=submissions
-Reverse a linked list,EasyAccuracy:,73.11%Submissions:,"Linked list: 1->2->3->4->5->6
+Reverse a linked list,Easy,73.11,"Linked list: 1->2->3->4->5->6
 Output: 6->5->4->3->2->1
 Explanation: 2->7->10->9->8 
 Output: 8->9->10->7->2
@@ -678,7 +678,7 @@ Output: 10
 Explanation: For a single node list, the reverse would be same as original Expected Time Complexity: O(n)
 Expected Space  Constraints:
 1 <= number of nodes, data of nodes <= 105",https://www.geeksforgeeks.org/problems/reverse-a-linked-list/1?page=4&sortBy=submissions
-nCr,MediumAccuracy:,14.82%Submissions:,"Given two integers n and r, find nCr. 
+nCr,Medium,14.82,"Given two integers n and r, find nCr. 
 Note: If r is greater than n, return 0. Examples: Input: n = 3, r = 2
 Output: 3
 Explaination: 3C2 = 3. Input: n = 2, r = 4
@@ -688,7 +688,7 @@ Output: 1
 Explaination: Any nC0 = 1 by definition, regardless of the value of nn. Constraints:
 1 ≤ n ≤ 32
 1 ≤ r ≤ 32",https://www.geeksforgeeks.org/problems/ncr1019/1?page=4&sortBy=submissions
-Prime Number,BasicAccuracy:,22.2%Submissions:,"Given a number n, determine whether it is a prime number or not. A prime number is a number greater than 1 that has no positive divisors other than 1 and itself. Examples : Input: n = 7
+Prime Number,Basic,22.2,"Given a number n, determine whether it is a prime number or not. A prime number is a number greater than 1 that has no positive divisors other than 1 and itself. Examples : Input: n = 7
 Output: true
 Explanation: 7 has exactly two divisors: 1 and 7, making it a prime number. Input: n = 25
 Output: false
@@ -696,14 +696,14 @@ Explanation: 25 has more than two divisors: 1, 5, and 25, so it is not a prime n
 Output: false
 Explanation: 1 has only one divisor (1 itself), which is not sufficient for it to be considered prime. Constraints:
 1 ≤ n ≤ 109",https://www.geeksforgeeks.org/problems/prime-number2314/1?page=4&sortBy=submissions
-Longest Consecutive Subsequence,MediumAccuracy:,33.0%Submissions:,"Given an array arr of non-negative integers. Find the length of the longest sub-sequence such that elements in the subsequence are consecutive integers, the consecutive numbers can be in any order. Examples: Input: arr[] = [2, 6, 1, 9, 4, 5, 3]
+Longest Consecutive Subsequence,Medium,33,"Given an array arr of non-negative integers. Find the length of the longest sub-sequence such that elements in the subsequence are consecutive integers, the consecutive numbers can be in any order. Examples: Input: arr[] = [2, 6, 1, 9, 4, 5, 3]
 Output: 6
 Explanation: The consecutive numbers here are 1, 2, 3, 4, 5, 6. These 6 numbers form the longest consecutive subsquence. Input: arr[] = [1, 9, 3, 10, 4, 20, 2]
 Output: 4
 Explanation: 1, 2, 3, 4 is the longest consecutive subsequence. Input: arr[] = [15, 13, 12, 14, 11, 10, 9]
 Output: 7
 Explanation: The longest consecutive subsequence is 9, 10, 11, 12, 13, 14, 15, which has a length of 7. Constraints:",https://www.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1?page=4&sortBy=submissions
-Longest Palindrome Substring,MediumAccuracy:,23.2%Submissions:,"Given a string s, your task is to find the longest palindromic substring within s. A substring is a contiguous sequence of characters within a string, defined as s[i...j] where 0 ≤ i ≤ j < len(s). A palindrome is a string that reads the same forward and backward. More formally, s is a palindrome if reverse(s) == s. Note: If there are multiple palindromes with the same length, return the first occurrence of the longest palindromic substring from left to right. Examples : Input: s = ""aaaabbaa""
+Longest Palindrome Substring,Medium,23.2,"Given a string s, your task is to find the longest palindromic substring within s. A substring is a contiguous sequence of characters within a string, defined as s[i...j] where 0 ≤ i ≤ j < len(s). A palindrome is a string that reads the same forward and backward. More formally, s is a palindrome if reverse(s) == s. Note: If there are multiple palindromes with the same length, return the first occurrence of the longest palindromic substring from left to right. Examples : Input: s = ""aaaabbaa""
 Output: ""aabbaa""
 Explanation: The longest palindromic substring is ""aabbaa"". Input: s = ""abc""
 Output: ""a""
@@ -712,7 +712,7 @@ Output: ""aba""
 Explanation: The longest palindromic substring is ""aba"", which occurs twice. The first occurrence is returned. Constraints:
 1 ≤ s.size() ≤ 103
 The string s consists of only lowercase English letters ('a' to 'z').",https://www.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1?page=4&sortBy=submissions
-Triplet Sum in Array,MediumAccuracy:,35.0%Submissions:,"Given an array arr[] and an integer target, determine if there exists a triplet in the array whose sum equals the given target. Examples Input: arr[] = [1, 4, 45, 6, 10, 8], target = 13
+Triplet Sum in Array,Medium,35,"Given an array arr[] and an integer target, determine if there exists a triplet in the array whose sum equals the given target. Examples Input: arr[] = [1, 4, 45, 6, 10, 8], target = 13
 Output: true
 Explanation: The triplet {1, 4, 8} sums up to 13 Input: arr[] = [1, 2, 4, 3, 6, 7], target = 10
 Output: true
@@ -721,7 +721,7 @@ Output: false
 Explanation: No triplet in the array sums to 24 Constraints:
 3 ≤ arr.size() ≤ 103
 1 ≤ arr[i] ≤ 105",https://www.geeksforgeeks.org/problems/triplet-sum-in-array-1587115621/1?page=4&sortBy=submissions
-Min and Max in Array,BasicAccuracy:,68.55%Submissions:,"Given an array arr. Your task is to find the minimum and maximum elements in the array. Note: Return an array that contains two elements the first one will be a minimum element and the second will be a maximum of an array. Examples: Input: arr = [3, 2, 1, 56, 10000, 167]
+Min and Max in Array,Basic,68.55,"Given an array arr. Your task is to find the minimum and maximum elements in the array. Note: Return an array that contains two elements the first one will be a minimum element and the second will be a maximum of an array. Examples: Input: arr = [3, 2, 1, 56, 10000, 167]
 Output: 1 10000
 Explanation: minimum and maximum elements of array are 1 and 10000. Input: arr = [1, 345, 234, 21, 56789]
 Output: 1 56789
@@ -730,7 +730,7 @@ Output: 56789 56789 Explanation: Since the array contains only one element so bo
 Expected Auxiliary Space: O(1) Constraints:
 1 <= arr.size() <= 105
 1 <= arr[i] <=1012",https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1?page=4&sortBy=submissions
-Rat in a Maze Problem - I,MediumAccuracy:,35.75%Submissions:,"Consider a rat placed at position (0, 0) in an n x n square matrix mat. The rat's goal is to reach the destination at position (n-1, n-1). The rat can move in four possible directions: 'U'(up), 'D'(down), 'L' (left), 'R' (right). 0: A blocked cell through which the rat cannot travel. 1: A free cell that the rat can pass through. Note: In a path, no cell can be visited more than one time. If the source cell is 0, the rat cannot move to any other cell. In case of no path, return an empty list.+ Examples: Input: mat[][] = [[1, 0, 0, 0], [1, 1, 0, 1], [1, 1, 0, 0], [0, 1, 1, 1]]
+Rat in a Maze Problem - I,Medium,35.75,"Consider a rat placed at position (0, 0) in an n x n square matrix mat. The rat's goal is to reach the destination at position (n-1, n-1). The rat can move in four possible directions: 'U'(up), 'D'(down), 'L' (left), 'R' (right). 0: A blocked cell through which the rat cannot travel. 1: A free cell that the rat can pass through. Note: In a path, no cell can be visited more than one time. If the source cell is 0, the rat cannot move to any other cell. In case of no path, return an empty list.+ Examples: Input: mat[][] = [[1, 0, 0, 0], [1, 1, 0, 1], [1, 1, 0, 0], [0, 1, 1, 1]]
 Output: [""DDRDRR"", ""DRDDRR""]
 Explanation: The rat can reach the destination at (3, 3) from (0, 0) by two paths - DRDDRR and DDRDRR, when printed in sorted order we get DDRDRR DRDDRR. Input: mat[][] = [[1, 0], [1, 0]]
 Output: []
@@ -739,14 +739,14 @@ Output: [""DDRR"", ""RRDD""]
 Explanation: The rat has two possible paths to reach the destination: 1. ""DDRR"" 2. ""RRDD"", These are returned in lexicographically sorted order. Constraints:
 2 ≤ mat.size() ≤ 5
 0 ≤ mat[i][j] ≤ 1",https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1?page=4&sortBy=submissions
-Diameter of a Binary Tree,MediumAccuracy:,47.37%Submissions:,"Given a binary tree, the diameter (also known as the width) is defined as the number of edges on the longest path between two leaf nodes in the tree. This path may or may not pass through the root. Your task is to find the diameter of the tree. Examples: Input: root[] = [1, 2, 3]
+Diameter of a Binary Tree,Medium,47.37,"Given a binary tree, the diameter (also known as the width) is defined as the number of edges on the longest path between two leaf nodes in the tree. This path may or may not pass through the root. Your task is to find the diameter of the tree. Examples: Input: root[] = [1, 2, 3]
 
 Output: 2
 Explanation: The longest path has 2 edges (node 2 -> node 1 -> node 3). Input: root[] = [5, 8, 6, 3, 7, N, 9]
 Output: 4 Explanation: The longest path has 4 edges (node 3 -> node 8 -> node 5 -> node 6 -> node 9). Constraints:
 1 ≤ number of nodes ≤ 105
 1 ≤ node->data ≤ 105",https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1?page=4&sortBy=submissions
-Two Sum - Pair with Given Sum,EasyAccuracy:,30.61%Submissions:,"Given an array arr of positive integers and another number target. Determine whether two elements exist in arr whose sum is exactly target Examples: Input: arr[] = [1, 4, 45, 6, 10, 8], target =16
+Two Sum - Pair with Given Sum,Easy,30.61,"Given an array arr of positive integers and another number target. Determine whether two elements exist in arr whose sum is exactly target Examples: Input: arr[] = [1, 4, 45, 6, 10, 8], target =16
 Output: true
 Explanation: arr[3] + arr[4] = 6 + 10 = 16 Input: arr[] = [1, 2, 4, 3, 6], target = 11
 Output: false
@@ -754,7 +754,7 @@ Explanation: None of the pair makes a sum of 11 Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(n) Constraints:
 1 ≤ arr.size ≤ 105
 1 ≤ arr[i] ≤ 105",https://www.geeksforgeeks.org/problems/key-pair5616/1?page=4&sortBy=submissions
-Remove Duplicates from a Sorted Linked List,EasyAccuracy:,49.37%Submissions:,"Note: Try not to use extra space. The nodes are arranged in a sorted way. Examples: Input:
+Remove Duplicates from a Sorted Linked List,Easy,49.37,"Note: Try not to use extra space. The nodes are arranged in a sorted way. Examples: Input:
 LinkedList: 2->2->4->5
 Output: 2 -> 4 -> 5
 Explanation: In the given linked list 2 -> 2 -> 4 -> 5, only 2 occurs more than 1 time. So we need to remove it once. Input:
@@ -763,14 +763,14 @@ Output: 2
 Explanation: In the given linked list 2 -> 2 -> 2 -> 2, 2 is the only element and is repeated 5 times. So we need to remove any four 2. Expected Time Complexity : O(n)
 Expected Space  Constraints:
 1 <= Number of nodes, data of nodes <= 105 ",https://www.geeksforgeeks.org/problems/remove-duplicate-element-from-sorted-linked-list/1?page=4&sortBy=submissions
-Longest Common Prefix of Strings,EasyAccuracy:,29.52%Submissions:,"Given an array of strings arr[]. Return the longest common prefix among each and every strings present in the array. Examples : Input: arr[] = [""geeksforgeeks"", ""geeks"", ""geek"", ""geezer""]
+Longest Common Prefix of Strings,Easy,29.52,"Given an array of strings arr[]. Return the longest common prefix among each and every strings present in the array. Examples : Input: arr[] = [""geeksforgeeks"", ""geeks"", ""geek"", ""geezer""]
 Output: ""gee""
 Explanation: ""gee"" is the longest common prefix in all the given strings. Input: arr[] = [""hello"", ""world""]
 Output: """"
 Explanation: There's no common prefix in the given strings. Constraints:
 1 ≤ |arr| ≤ 103
 1 ≤ |arr[i]| ≤ 103",https://www.geeksforgeeks.org/problems/longest-common-prefix-in-an-array5129/1?page=4&sortBy=submissions
-DFS of Graph,EasyAccuracy:,63.07%Submissions:,"Given a connected undirected graph represented by an adjacency list adj, which is a vector of vectors where each adj[i] represents the list of vertices connected to vertex i. Perform a Depth First Traversal (DFS) starting from vertex 0, visiting vertices from left to right as per the adjacency list, and return a list containing the DFS traversal of the graph. Examples: Input: adj = [[2,3,1], [0], [0,4], [0], [2]]
+DFS of Graph,Easy,63.07,"Given a connected undirected graph represented by an adjacency list adj, which is a vector of vectors where each adj[i] represents the list of vertices connected to vertex i. Perform a Depth First Traversal (DFS) starting from vertex 0, visiting vertices from left to right as per the adjacency list, and return a list containing the DFS traversal of the graph. Examples: Input: adj = [[2,3,1], [0], [0,4], [0], [2]]
 
 Output: [0, 2, 4, 3, 1]
 Explanation: Starting from 0, the DFS traversal proceeds as follows:
@@ -788,13 +788,13 @@ Visit 3 (the first neighbor of 2) → Output: 0, 1, 2, 3
 Backtrack to 2 and visit 4 → Final Output: 0, 1, 2, 3, 4 Constraints:
 1 ≤ adj.size() ≤ 104
 1 ≤ adj[i][j] ≤ 104",https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1?page=4&sortBy=submissions
-N meetings in one room,EasyAccuracy:,45.3%Submissions:,"You are given timings of n meetings in the form of (start[i], end[i]) where start[i] is the start time of meeting i and end[i] is the finish time of meeting i. Return the maximum number of meetings that can be accommodated in a single meeting room, when only one meeting can be held in the meeting room at a particular time.  Note: The start time of one chosen meeting can't be equal to the end time of the other chosen meeting. Examples : Input: start[] = [1, 3, 0, 5, 8, 5], end[] = [2, 4, 6, 7, 9, 9]
+N meetings in one room,Easy,45.3,"You are given timings of n meetings in the form of (start[i], end[i]) where start[i] is the start time of meeting i and end[i] is the finish time of meeting i. Return the maximum number of meetings that can be accommodated in a single meeting room, when only one meeting can be held in the meeting room at a particular time.  Note: The start time of one chosen meeting can't be equal to the end time of the other chosen meeting. Examples : Input: start[] = [1, 3, 0, 5, 8, 5], end[] = [2, 4, 6, 7, 9, 9]
 Output: 4
 Explanation: Maximum four meetings can be held with given start and end timings. The meetings are - (1, 2), (3, 4), (5,7) and (8,9) Input: start[] = [10, 12, 20], end[] = [20, 25, 30]
 Output: 1
 Explanation: Only one meetings can be held with given start and end timings. Input: start[] = [1, 2], end[] = [100, 99]
 Output: 1 Constraints:",https://www.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1?page=4&sortBy=submissions
-Intersection in Y Shaped Lists,MediumAccuracy:,44.67%Submissions:,"Input: Linked list 1: 4->4->4->4->4, Linked list 2: 4->4->4
+Intersection in Y Shaped Lists,Medium,44.67,"Input: Linked list 1: 4->4->4->4->4, Linked list 2: 4->4->4
 Output: 4
 Explanation: From the above image, it is clearly seen that the common part is 4->4 whose starting point is 4. Input: Linked list 1: 4->1->8->4->5, Linked List 2: 5->6->1->8->4->5
 
@@ -802,7 +802,7 @@ Output: 8
 Explanation: From the above image, it is clearly seen that the common part is 8->4->5 whose starting point is 8. Input: Linked list 1: 1->2->3, Linked list 2: 4->5->6
 Output: -1
 Explanation: There is no common part, so there is no interaction point.",https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1?page=4&sortBy=submissions
-Sorted Array Search,BasicAccuracy:,48.03%Submissions:,"Given an array, arr[] sorted in ascending order and an integer k. Return true if k is present in the array, otherwise, false. Examples: Input: arr[] = [1, 2, 3, 4, 6], k = 6
+Sorted Array Search,Basic,48.03,"Given an array, arr[] sorted in ascending order and an integer k. Return true if k is present in the array, otherwise, false. Examples: Input: arr[] = [1, 2, 3, 4, 6], k = 6
 Output: true
 Exlpanation: Since, 6 is present in the array at index 4 (0-based indexing), output is true. Input: arr[] = [1, 2, 4, 5, 6], k = 3
 Output: false
@@ -811,7 +811,7 @@ Output: false Constraints:
 1 <= arr.size() <= 106
 1 <= k <= 106
 1 <= arr[i] <= 106",https://www.geeksforgeeks.org/problems/who-will-win-1587115621/1?page=4&sortBy=submissions
-Height of Binary Tree,EasyAccuracy:,78.58%Submissions:,"Examples: Input: root[] = [2, N, 1, 3 N]
+Height of Binary Tree,Easy,78.58,"Examples: Input: root[] = [2, N, 1, 3 N]
  2
  \
  1
@@ -829,7 +829,7 @@ Output: 0
 Explanation: The tree consists of only one node (node 1) and has no edges, so the height is 0. Constraints:
 1 <= number of nodes <= 105
 1 <= node->data <= 105",https://www.geeksforgeeks.org/problems/height-of-binary-tree/1?page=5&sortBy=submissions
-Add Number Linked Lists,MediumAccuracy:,34.52%Submissions:,"Given two numbers, num1, and num2, represented by linked lists. The task is to return the head of the linked list representing the sum of these two numbers. For example, the number 190 will be represented by the linked list, 1->9->0->null, similarly 25 by 2->5->null. Sum of these two numbers is 190 + 25 = 215, which will be represented by 2->1->5->null. You are required to return the head of the linked list 2->1->5->null. Note: There can be leading zeros in the input lists, but there should not be any leading zeros in the output list. Examples: Input: num1 = 45 (4->5->null), num2 = 345 (3->4->5->null)
+Add Number Linked Lists,Medium,34.52,"Given two numbers, num1, and num2, represented by linked lists. The task is to return the head of the linked list representing the sum of these two numbers. For example, the number 190 will be represented by the linked list, 1->9->0->null, similarly 25 by 2->5->null. Sum of these two numbers is 190 + 25 = 215, which will be represented by 2->1->5->null. You are required to return the head of the linked list 2->1->5->null. Note: There can be leading zeros in the input lists, but there should not be any leading zeros in the output list. Examples: Input: num1 = 45 (4->5->null), num2 = 345 (3->4->5->null)
 Output: 3->9->0->null 
 Explanation:
 For the given two linked list (4 5) and (3 4 5), after adding the two linked list resultant linked list will be (3 9 0). Input: num1 = 0063 (0->0->6->3->null), num2 = 07 (0->7->null)
@@ -837,7 +837,7 @@ Output: 7->0->null
 Explanation:
 For the given two linked list (0 0 6 3) and (0 7), after adding the two linked list resultant linked list will be (7 0). Expected Time Complexity: O(n+m)
 Expected Space Complexity: O(max(n,m)) for the resultant list. Constraints:",https://www.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1?page=5&sortBy=submissions
-Fractional Knapsack,MediumAccuracy:,32.46%Submissions:,"Given two arrays, val[] and wt[], representing the values and weights of items, and an integer capacity representing the maximum weight a knapsack can hold, determine the maximum total value that can be achieved by putting items in the knapsack. You are allowed to break items into fractions if necessary. Examples : Input: val[] = [60, 100, 120], wt[] = [10, 20, 30], capacity = 50
+Fractional Knapsack,Medium,32.46,"Given two arrays, val[] and wt[], representing the values and weights of items, and an integer capacity representing the maximum weight a knapsack can hold, determine the maximum total value that can be achieved by putting items in the knapsack. You are allowed to break items into fractions if necessary. Examples : Input: val[] = [60, 100, 120], wt[] = [10, 20, 30], capacity = 50
 Output: 240.000000
 Explanation: Take the item with value 60 and weight 10, value 100 and weight 20 and split the third item with value 120 and weight 30, to fit it into weight 20. so it becomes (120/30)*20=80, so the total value becomes 60+100+80.0=240.0 Thus, total maximum value of item we can have is 240.00 from the given capacity of sack. Input: val[] = [60, 100], wt[] = [10, 20], capacity = 50
 Output: 160.000000
@@ -847,7 +847,7 @@ Explanation: In this case, the knapsack capacity exceeds the combined weight of 
 1 <= val.size=wt.size <= 105
 1 <= capacity <= 109
 1 <= val[i], wt[i] <= 104",https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1?page=5&sortBy=submissions
-The Celebrity Problem,MediumAccuracy:,38.33%Submissions:,"A celebrity is a person who is known to all but does not know anyone at a party. A party is being organized by some people.  A square matrix mat (n*n) is used to represent people at the party such that if an element of row i and column j is set to 1 it means ith person knows jth person. You need to return the index of the celebrity in the party, if the celebrity does not exist, return -1. Note: Follow 0-based indexing. Examples: Input: mat[][] = [[0 1 0], [0 0 0], [0 1 0]]
+The Celebrity Problem,Medium,38.33,"A celebrity is a person who is known to all but does not know anyone at a party. A party is being organized by some people.  A square matrix mat (n*n) is used to represent people at the party such that if an element of row i and column j is set to 1 it means ith person knows jth person. You need to return the index of the celebrity in the party, if the celebrity does not exist, return -1. Note: Follow 0-based indexing. Examples: Input: mat[][] = [[0 1 0], [0 0 0], [0 1 0]]
 Output: 1
 Explanation: 0th and 2nd person both know 1. Therefore, 1 is the celebrity. Input: mat[][] = [[0 1], [1 0]]
 Output: -1
@@ -855,7 +855,7 @@ Explanation: The two people at the party both know each other. None of them is a
 Output: 0 Constraints:
 1 <= mat.size()<= 3000
 0 <= mat[i][j]<= 1",https://www.geeksforgeeks.org/problems/the-celebrity-problem/1?page=5&sortBy=submissions
-Longest Common Subsequence,MediumAccuracy:,41.68%Submissions:,"Examples: Input: s1 = ""ABCDGH"", s2 = ""AEDFHR""
+Longest Common Subsequence,Medium,41.68,"Examples: Input: s1 = ""ABCDGH"", s2 = ""AEDFHR""
 Output: 3
 Explanation: The longest common subsequence of ""ABCDGH"" and ""AEDFHR"" is ""ADH"", which has a length of 3. Input: s1 = ""ABC"", s2 = ""AC""
 Output: 2
@@ -864,7 +864,7 @@ Output: 3
 Explanation: The longest common subsequences of ""XYZW"" and ""XYWZ"" are ""XYZ"" and ""XYW"", both of length 3. Constraints:
 1<= s1.size(), s2.size() <=103
 Both strings s1 and s2 contain only uppercase English letters.",https://www.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1?page=5&sortBy=submissions
-Rotate Array by One,BasicAccuracy:,69.6%Submissions:,"Given an array arr, rotate the array by one position in clock-wise direction. Examples: Input: arr = [1, 2, 3, 4, 5]
+Rotate Array by One,Basic,69.6,"Given an array arr, rotate the array by one position in clock-wise direction. Examples: Input: arr = [1, 2, 3, 4, 5]
 Output: [5, 1, 2, 3, 4]
 Explanation: If we rotate arr by one position in clockwise 5 come to the front and remaining those are shifted to the end. Input: arr = [9, 8, 7, 6, 4, 2, 1, 3]
 Output: [3, 9, 8, 7, 6, 4, 2, 1]
@@ -872,7 +872,7 @@ Explanation: After rotating clock-wise 3 comes in first position. Expected Time 
 Expected Auxiliary Space: O(1) Constraints:
 1<=arr.size()<=105
 0<=arr[i]<=105",https://www.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1?page=5&sortBy=submissions
-Spirally traversing a matrix,MediumAccuracy:,35.2%Submissions:,"You are given a rectangular matrix, and your task is to return an array while traversing the matrix in spiral form. Examples: Input: mat[][] = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15,16]]
+Spirally traversing a matrix,Medium,35.2,"You are given a rectangular matrix, and your task is to return an array while traversing the matrix in spiral form. Examples: Input: mat[][] = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15,16]]
 Output: [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]
 Explanation: Input: mat[][] = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18]]
 Output: [1, 2, 3, 4, 5, 6, 12, 18, 17, 16, 15, 14, 13, 7, 8, 9, 10, 11]
@@ -881,7 +881,7 @@ Output: [32, 44, 27, 23, 62, 50, 28, 54]
 Explanation: Applying same technique as shown above, output will be 32 44 27 23 62 50 28 54. Constraints:
 1 <= mat.size(), mat[0].size() <= 1000
 0 <= mat[i][j]<= 100",https://www.geeksforgeeks.org/problems/spirally-traversing-a-matrix-1587115621/1?page=5&sortBy=submissions
-K-th element of two Arrays,MediumAccuracy:,37.4%Submissions:,"Given two sorted arrays arr1 and arr2 and an element k. The task is to find the element that would be at the kth position of the combined sorted array. Examples : Input: k = 5, arr1[] = [2, 3, 6, 7, 9], arr2[] = [1, 4, 8, 10]
+K-th element of two Arrays,Medium,37.4,"Given two sorted arrays arr1 and arr2 and an element k. The task is to find the element that would be at the kth position of the combined sorted array. Examples : Input: k = 5, arr1[] = [2, 3, 6, 7, 9], arr2[] = [1, 4, 8, 10]
 Output: 6
 Explanation: The final combined sorted array would be - 1, 2, 3, 4, 6, 7, 8, 9, 10. The 5th element of this array is 6. Input: k = 7, arr1[] = [100, 112, 256, 349, 770], arr2[] = [72, 86, 113, 119, 265, 445, 892]
 Output: 256
@@ -889,7 +889,7 @@ Explanation: Combined sorted array is - 72, 86, 100, 112, 113, 119, 256, 265, 34
 1 <= k<= arr1.size()+arr2.size()
 1 <= arr1.size(), arr2.size() <= 106
 0 <= arr1[i], arr2[i] < 108",https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1?page=5&sortBy=submissions
-Subset Sum Problem,MediumAccuracy:,32.0%Submissions:,"Given an array of positive integers, arr[] and a value, target, determine if there is a subset of the given set with sum equal to given target.  Examples: Input: arr[] = [3, 34, 4, 12, 5, 2], target = 9
+Subset Sum Problem,Medium,32,"Given an array of positive integers, arr[] and a value, target, determine if there is a subset of the given set with sum equal to given target.  Examples: Input: arr[] = [3, 34, 4, 12, 5, 2], target = 9
 Output: true 
 Explanation: Here there exists a subset with target sum = 9, 4+3+2 = 9. Input: arr[] = [3, 34, 4, 12, 5, 2, target = 30
 Output: false
@@ -897,7 +897,7 @@ Explanation: There is no subset with target sum 30. Input: arr[] = [1, 2, 3], su
 Output: true
 Explanation: The entire array can be taken as a subset, giving 1 + 2 + 3 = 6. Constraints:
 1 <= arr.size() <= 200",https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1?page=5&sortBy=submissions
-Max Value Permutation,EasyAccuracy:,18.93%Submissions:,"Given an array, arr of integers. Your task is to write a program to find the maximum value of ∑arr[i]*i, where i = 0, 1, 2,., n-1. You are allowed to rearrange the elements of the array.
+Max Value Permutation,Easy,18.93,"Given an array, arr of integers. Your task is to write a program to find the maximum value of ∑arr[i]*i, where i = 0, 1, 2,., n-1. You are allowed to rearrange the elements of the array.
 Note: Since the output could be large, print the answer modulo 109+7. Given an array, arr of integers. Your task is to write a program to find the maximum value of ∑arr[i]*i, where i = 0, 1, 2,., n-1. You are allowed to rearrange the elements of the array.
 Note: Since the output could be large, print the answer modulo 109+7. Examples: Input: arr[] = [5, 3, 2, 4, 1]
 Output: 40
@@ -910,7 +910,7 @@ Explanation: Sorted or unsorted, each element is 7. The sum becomes: 7 ∗ 0 + 7
 1 ≤ arr[i] ≤ 105 Constraints:
 1 ≤ arr.size ≤ 105
 1 ≤ arr[i] ≤ 105",https://www.geeksforgeeks.org/problems/maximize-arrii-of-an-array0026/1?page=5&sortBy=submissions
-Subarray with 0 sum,MediumAccuracy:,39.79%Submissions:,"Given an array of integers, arr[]. Find if there is a subarray (of size at least one) with 0 sum. Return true/false depending upon whether there is a subarray present with 0-sum or not.  Examples: Input: arr[] = [4, 2, -3, 1, 6]
+Subarray with 0 sum,Medium,39.79,"Given an array of integers, arr[]. Find if there is a subarray (of size at least one) with 0 sum. Return true/false depending upon whether there is a subarray present with 0-sum or not.  Examples: Input: arr[] = [4, 2, -3, 1, 6]
 Output: true
 Explanation: 2, -3, 1 is the subarray with a sum of 0. Input: arr = [4, 2, 0, 1, 6]
 Output: true
@@ -918,20 +918,20 @@ Explanation: 0 is one of the element in the array so there exist a subarray with
 Output: false Constraints:
 1 <= arr.size <= 104
 -105 <= arr[i] <= 105",https://www.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1?page=5&sortBy=submissions
-Validate an IP Address,MediumAccuracy:,11.22%Submissions:,"You are given a string s in the form of an IPv4 Address. Your task is to validate an IPv4 Address, if it is valid return true otherwise return false. IPv4 addresses are canonically represented in dot-decimal notation, which consists of four decimal numbers, each ranging from 0 to 255, separated by dots, e.g., ""172.16.254.1"" A valid IPv4 Address is of the form x1.x2.x3.x4 where 0 <= (x1, x2, x3, x4) <= 255. Thus, we can write the generalized form of an IPv4 address as (0-255).(0-255).(0-255).(0-255) Note: Here we are considering numbers only from 0 to 255 and any additional leading zeroes will be considered invalid. Examples : Input: s = ""222.111.111.111""
+Validate an IP Address,Medium,11.22,"You are given a string s in the form of an IPv4 Address. Your task is to validate an IPv4 Address, if it is valid return true otherwise return false. IPv4 addresses are canonically represented in dot-decimal notation, which consists of four decimal numbers, each ranging from 0 to 255, separated by dots, e.g., ""172.16.254.1"" A valid IPv4 Address is of the form x1.x2.x3.x4 where 0 <= (x1, x2, x3, x4) <= 255. Thus, we can write the generalized form of an IPv4 address as (0-255).(0-255).(0-255).(0-255) Note: Here we are considering numbers only from 0 to 255 and any additional leading zeroes will be considered invalid. Examples : Input: s = ""222.111.111.111""
 Output: true
 Explanation: Here, the IPv4 address is as per the criteria mentioned and also all four decimal numbers lies in the mentioned range. Input: s = ""5555..555""
 Output: false
 Explanation: ""5555..555"" is not a valid. IPv4 address, as the middle two portions are missing. Input: s = ""0.0.0.255""
 Output: false Constraints:
 1<= |s| <=15",https://www.geeksforgeeks.org/problems/validate-an-ip-address-1587115621/1?page=5&sortBy=submissions
-Square Root,EasyAccuracy:,54.03%Submissions:,"Given an integer n, find the square root of n. If n is not a perfect square, then return the floor value. Examples: Input: n = 5
+Square Root,Easy,54.03,"Given an integer n, find the square root of n. If n is not a perfect square, then return the floor value. Examples: Input: n = 5
 Output: 2
 Explanation: Since, 5 is not a perfect square, floor of square_root of 5 is 2. Input: n = 4
 Output: 2
 Explanation: Since, 4 is a perfect square, so its square root is 2. Input: n = 1
 Output: 1 Constraints:",https://www.geeksforgeeks.org/problems/square-root/1?page=5&sortBy=submissions
-Linked List Insertion At End,BasicAccuracy:,43.96%Submissions:,"Examples : Input: LinkedList: 1->2->3->4->5 , x = 6
+Linked List Insertion At End,Basic,43.96,"Examples : Input: LinkedList: 1->2->3->4->5 , x = 6
 Output: 1->2->3->4->5->6
 Explanation:
 
@@ -942,7 +942,7 @@ We can see that 1 is inserted at the end of the linkedlist. Expected Time Comple
 Expected Auxiliary Space: O(1) Constraints:
 0 <= number of nodes <= 105
 1 <= node->data , x <= 103",https://www.geeksforgeeks.org/problems/linked-list-insertion-1587115620/1?page=5&sortBy=submissions
-Stock buy and sell,MediumAccuracy:,29.18%Submissions:,"The cost of stock on each day is given in an array A[] of size N. Find all the segments of days on which you buy and sell the stock such that the sum of difference between sell and buy prices is maximized. Each segment consists of indexes of two elements, first is index of day on which you buy stock and second is index of day on which you sell stock. Note: the driver code will print 1 if your answer is correct, otherwise, it will return 0. In case there's no profit the driver code will print the string ""No Profit"" for a correct solution.
+Stock buy and sell,Medium,29.18,"The cost of stock on each day is given in an array A[] of size N. Find all the segments of days on which you buy and sell the stock such that the sum of difference between sell and buy prices is maximized. Each segment consists of indexes of two elements, first is index of day on which you buy stock and second is index of day on which you sell stock. Note: the driver code will print 1 if your answer is correct, otherwise, it will return 0. In case there's no profit the driver code will print the string ""No Profit"" for a correct solution.
 
 Example 1: Input:
 N = 7
@@ -969,14 +969,14 @@ The task is to complete the function stockBuySell() which takes an array of A[] 
 Expected Auxiliary Space: O(N) Constraints:
 2 ≤ N ≤ 106
 0 ≤ A[i] ≤ 106",https://www.geeksforgeeks.org/problems/stock-buy-and-sell-1587115621/1?page=5&sortBy=submissions
-Permutations of a String,MediumAccuracy:,34.65%Submissions:,"Given a string s. The task is to return a vector of string of all unique permutations of the given string, s that may contain duplicates in lexicographically sorted order.  Examples: Input: ""ABC""
+Permutations of a String,Medium,34.65,"Given a string s. The task is to return a vector of string of all unique permutations of the given string, s that may contain duplicates in lexicographically sorted order.  Examples: Input: ""ABC""
 Output: [""ABC"", ""ACB"", ""BAC"", ""BCA"", ""CAB"", ""CBA""]
 Explanation: Given string ABC has permutations in 6 forms as ""ABC"", ""ACB"", ""BAC"", ""BCA"", ""CAB"" and ""CBA"". Input: ""ABSG""
 Output: [""ABGS"", ""ABSG"", ""AGBS"", ""AGSB"", ""ASBG"", ""ASGB"", ""BAGS"", ""BASG"", ""BGAS"", ""BGSA"", ""BSAG"", ""BSGA"", ""GABS"", ""GASB"", ""GBAS"", ""GBSA"", ""GSAB"", ""GSBA"", ""SABG"", ""SAGB"", ""SBAG"", ""SBGA"", ""SGAB"", ""SGBA""]
 Explanation: Given string ABSG has 24 permutations. Input: ""AAA""
 Output: [""AAA""] Constraints:
 1 <= s.size() <= 5",https://www.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1?page=5&sortBy=submissions
-Bottom View of Binary Tree,MediumAccuracy:,54.18%Submissions:,"Given a binary tree, return an array where elements represent the bottom view of the binary tree from left to right. Note: If there are multiple bottom-most nodes for a horizontal distance from the root, then the latter one in the level traversal is considered. For example, in the below diagram, 3 and 4 are both the bottommost nodes at a horizontal distance of 0, here 4 will be considered. For the above tree, the output should be 5 10 4 14 25. Examples : Input:
+Bottom View of Binary Tree,Medium,54.18,"Given a binary tree, return an array where elements represent the bottom view of the binary tree from left to right. Note: If there are multiple bottom-most nodes for a horizontal distance from the root, then the latter one in the level traversal is considered. For example, in the below diagram, 3 and 4 are both the bottommost nodes at a horizontal distance of 0, here 4 will be considered. For the above tree, the output should be 5 10 4 14 25. Examples : Input:
  1
   / \
   3 2
@@ -996,7 +996,7 @@ Output: 40 20 60 30 Input:
 Output: 2 1 Constraints:
 1 <= number of nodes <= 105
 1 <= node->data <= 105",https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1?page=5&sortBy=submissions
-Identical Trees,EasyAccuracy:,50.01%Submissions:,"Given two binary trees with their root nodes r1 and r2, return true if both of them are identical, otherwise, false. Examples: Input:
+Identical Trees,Easy,50.01,"Given two binary trees with their root nodes r1 and r2, return true if both of them are identical, otherwise, false. Examples: Input:
  1 1
   / \ / \
   2 3 2 3
@@ -1015,7 +1015,7 @@ Output: false
 Explanation: Although both trees have the same node values (1 and 2), they are arranged differently, making the trees non-identical. Constraints:
 1 <= number of nodes <= 105
 1 <= node->data <= 109",https://www.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1?page=5&sortBy=submissions
-Coin Change (Count Ways),MediumAccuracy:,43.1%Submissions:,"Given an integer array coins[ ] representing different denominations of currency and an integer sum, find the number of ways you can make sum by using different combinations from coins[ ]. 
+Coin Change (Count Ways),Medium,43.1,"Given an integer array coins[ ] representing different denominations of currency and an integer sum, find the number of ways you can make sum by using different combinations from coins[ ]. 
 Note: Assume that you have an infinite supply of each type of coin. And you can use any coin as many times as you want.
 Answers are guaranteed to fit into a 32-bit integer.  Examples: Input: coins[] = [1, 2, 3], sum = 4
 Output: 4
@@ -1027,7 +1027,7 @@ Explanation: Since all coin denominations are greater than sum, no combination c
 1 <= sum <= 1e4
 1 <= coins[i] <= 1e4
 1 <= coins.size() <= 1e3",https://www.geeksforgeeks.org/problems/coin-change2448/1?page=5&sortBy=submissions
-First and Last Occurrences,MediumAccuracy:,37.36%Submissions:,"Given a sorted array arr with possibly some duplicates, the task is to find the first and last occurrences of an element x in the given array.
+First and Last Occurrences,Medium,37.36,"Given a sorted array arr with possibly some duplicates, the task is to find the first and last occurrences of an element x in the given array.
 Note: If the number x is not found in the array then return both the indices as -1. Examples: Input: arr[] = [1, 3, 5, 5, 5, 5, 67, 123, 125], x = 5
 Output: [2, 5]
 Explanation: First occurrence of 5 is at index 2 and last occurrence of 5 is at index 5 Input: arr[] = [1, 3, 5, 5, 5, 5, 7, 123, 125], x = 7
@@ -1037,14 +1037,14 @@ Output: [-1, -1]
 Explanation: No occurrence of 4 in the array, so, output is [-1, -1] Constraints:
 1 ≤ arr.size() ≤ 106
 1 ≤ arr[i], x ≤ 109",https://www.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1?page=5&sortBy=submissions
-First Repeating Element,EasyAccuracy:,32.57%Submissions:,"Given an array arr[], find the first repeating element. The element should occur more than once and the index of its first occurrence should be the smallest. Note:- The position you return should be according to 1-based indexing.  Input: arr[] = [1, 5, 3, 4, 3, 5, 6]
+First Repeating Element,Easy,32.57,"Given an array arr[], find the first repeating element. The element should occur more than once and the index of its first occurrence should be the smallest. Note:- The position you return should be according to 1-based indexing.  Input: arr[] = [1, 5, 3, 4, 3, 5, 6]
 Output: 2
 Explanation: 5 appears twice and its first appearance is at index 2 which is less than 3 whose first the occurring index is 3. Input: arr[] = [1, 2, 3, 4]
 Output: -1
 Explanation: All elements appear only once so answer is -1. Constraints:
 1 <= arr.size <= 106
 0 <= arr[i]<= 106",https://www.geeksforgeeks.org/problems/first-repeating-element4018/1?page=6&sortBy=submissions
-Find Transition Point,EasyAccuracy:,37.9%Submissions:,"Given a sorted array, arr[] containing only 0s and 1s, find the transition point, i.e., the first index where 1 was observed, and before that, only 0 was observed.  If arr does not have any 1, return -1. If array does not have any 0, return 0. If arr does not have any Examples: Input: arr[] = [0, 0, 0, 1, 1]
+Find Transition Point,Easy,37.9,"Given a sorted array, arr[] containing only 0s and 1s, find the transition point, i.e., the first index where 1 was observed, and before that, only 0 was observed.  If arr does not have any 1, return -1. If array does not have any 0, return 0. If arr does not have any Examples: Input: arr[] = [0, 0, 0, 1, 1]
 Output: 3
 Explanation: index 3 is the transition point where 1 begins. Input: arr[] = [0, 0, 0, 0]
 Output: -1
@@ -1055,7 +1055,7 @@ Output: 1
 Explanation: Index 1 is the transition point where 1 starts, and before it, only 0 was observed. Constraints:
 1 ≤ arr.size() ≤ 105
 0 ≤ arr[i] ≤ 1",https://www.geeksforgeeks.org/problems/find-transition-point-1587115620/1?page=6&sortBy=submissions
-Add 1 to a Linked List Number,MediumAccuracy:,31.91%Submissions:,"You are given a linked list where each element in the list is a node and have an integer data. You need to add 1 to the number formed by concatinating all the list node numbers together and return the head of the modified linked list.  Note: The head represents the first element of the given array. Examples : Input: LinkedList: 4->5->6
+Add 1 to a Linked List Number,Medium,31.91,"You are given a linked list where each element in the list is a node and have an integer data. You need to add 1 to the number formed by concatinating all the list node numbers together and return the head of the modified linked list.  Note: The head represents the first element of the given array. Examples : Input: LinkedList: 4->5->6
 Output: 457
 
 Explanation: 4->5->6 represents 456 and when 1 is added it becomes 457. Input: LinkedList: 1->2->3
@@ -1065,7 +1065,7 @@ Explanation: 1->2->3 represents 123 and when 1 is added it becomes 124. Expected
 Expected Auxiliary Space: O(1) Constraints:
 1 <= len(list) <= 105
 0 <= list[i] <= 9",https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1?page=6&sortBy=submissions
-Job Sequencing Problem,MediumAccuracy:,34.51%Submissions:,"Given an array, jobs[] where each job[i] has a jobid, deadline and profit associated with it. Each job takes 1 unit of time to complete and only one job can be scheduled at a time. We earn the profit associated with a job if and only if the job is completed by its deadline. Find the number of jobs done and the maximum profit. Note: jobs will be given in the form (jobid, deadline, profit) associated with that job. Deadline of the job is the time on or before which job needs to be completed to earn the profit. Examples : Input: jobs[] = [(1,4,20), (2,1,1), (3,1,40), (4,1,30)]
+Job Sequencing Problem,Medium,34.51,"Given an array, jobs[] where each job[i] has a jobid, deadline and profit associated with it. Each job takes 1 unit of time to complete and only one job can be scheduled at a time. We earn the profit associated with a job if and only if the job is completed by its deadline. Find the number of jobs done and the maximum profit. Note: jobs will be given in the form (jobid, deadline, profit) associated with that job. Deadline of the job is the time on or before which job needs to be completed to earn the profit. Examples : Input: jobs[] = [(1,4,20), (2,1,1), (3,1,40), (4,1,30)]
 Output: [2, 60]
 Explanation: job1 and job3 can be done with maximum profit of 60 (20+40). Input: jobs[] = [(1,2,100), (2,1,19), (3,2,27), (4,1,25), (5,1,15)]
 Output: [2, 127]
@@ -1075,7 +1075,7 @@ Explanation: Job 1 and Job 4 can be completed with a maximum profit of 80 (50 + 
 1 <=  jobs.size <= 105
 1 <= deadline, jobid <= jobs.size
 1 <= profit <= 500",https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1?page=6&sortBy=submissions
-Sum Tree,MediumAccuracy:,37.17%Submissions:,"Given a Binary Tree. Check for the Sum Tree for every node except the leaf node. Return true if it is a Sum Tree otherwise, return false. A SumTree is a Binary Tree where the value of a node is equal to the sum of the nodes present in its left subtree and right subtree. An empty tree is also a Sum Tree as the sum of an empty tree can be considered to be 0. A leaf node is also considered a Sum Tree. A SumTree is a Binary Tree where the value of a node is equal to the sum of the nodes present in its left subtree and right subtree. Examples: Input:
+Sum Tree,Medium,37.17,"Given a Binary Tree. Check for the Sum Tree for every node except the leaf node. Return true if it is a Sum Tree otherwise, return false. A SumTree is a Binary Tree where the value of a node is equal to the sum of the nodes present in its left subtree and right subtree. An empty tree is also a Sum Tree as the sum of an empty tree can be considered to be 0. A leaf node is also considered a Sum Tree. A SumTree is a Binary Tree where the value of a node is equal to the sum of the nodes present in its left subtree and right subtree. Examples: Input:
  3
  / \ 
  1 2
@@ -1094,7 +1094,7 @@ Explanation: The given tree is not a sum tree. For the root node, sum of element
 Output: false Constraints:
 2 ≤ number of nodes ≤ 105
 1 ≤ node->data ≤ 105",https://www.geeksforgeeks.org/problems/sum-tree/1?page=6&sortBy=submissions
-Remove Duplicates Sorted Array,EasyAccuracy:,38.18%Submissions:,"Given a sorted array arr. Return the size of the modified array which contains only distinct elements. Note:
+Remove Duplicates Sorted Array,Easy,38.18,"Given a sorted array arr. Return the size of the modified array which contains only distinct elements. Note:
 1. Don't use set or HashMap to solve the problem.
 2. You must return the modified array size only where distinct elements are present and modify the original array such that all the distinct elements come at the beginning of the original array. Examples : Input: arr = [2, 2, 2, 2, 2]
 Output: [2]
@@ -1103,7 +1103,7 @@ Output: [1, 2, 4]
 Explation: As the array does not contain any duplicates so you should return 3. Constraints:
 1 ≤ arr.size() ≤ 105
 1 ≤ ai ≤ 106",https://www.geeksforgeeks.org/problems/remove-duplicate-elements-from-sorted-array/1?page=6&sortBy=submissions
-Maximum Index,MediumAccuracy:,24.5%Submissions:,"Given an array arr of positive integers. The task is to return the maximum of j - i subjected to the constraint of arr[i] < arr[j] and i < j. Examples: Input: arr[] = [1, 10]
+Maximum Index,Medium,24.5,"Given an array arr of positive integers. The task is to return the maximum of j - i subjected to the constraint of arr[i] < arr[j] and i < j. Examples: Input: arr[] = [1, 10]
 Output: 1
 Explanation: arr[0] < arr[1] so (j-i) is 1-0 = 1. Input: arr[] = [34, 8, 10, 3, 2, 80, 30, 33, 1]
 Output: 6
@@ -1111,7 +1111,7 @@ Explanation: In the given array arr[1] < arr[7] satisfying the required conditio
 Expected Auxiliary Space: O(n) Constraints:
 1 ≤ arr.size ≤ 106
 0 ≤ arr[i] ≤ 109",https://www.geeksforgeeks.org/problems/maximum-index-1587115620/1?page=6&sortBy=submissions
-Merge Without Extra Space,HardAccuracy:,32.01%Submissions:,"Given two sorted arrays a[] and b[] in non-decreasing order. Merge them in sorted order without using any extra space. Modify a so that it contains the first n elements and modify b so that it contains the last m elements. Examples: Input: a[] = [2, 4, 7, 10], b[] = [2, 3]
+Merge Without Extra Space,Hard,32.01,"Given two sorted arrays a[] and b[] in non-decreasing order. Merge them in sorted order without using any extra space. Modify a so that it contains the first n elements and modify b so that it contains the last m elements. Examples: Input: a[] = [2, 4, 7, 10], b[] = [2, 3]
 Output:
 2 2 3 4
 7 10
@@ -1124,7 +1124,7 @@ Output:
 0 1
 2 3
 Explanation: After merging two sorted arrays we get 0 1 2 3. Constraints:",https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1?page=6&sortBy=submissions
-Wave Array,EasyAccuracy:,63.69%Submissions:,"Given a sorted array arr[] of distinct integers. Sort the array into a wave-like array(In Place). In other words, arrange the elements into a sequence such that arr[1] >= arr[2] <= arr[3] >= arr[4] <= arr[5].....
+Wave Array,Easy,63.69,"Given a sorted array arr[] of distinct integers. Sort the array into a wave-like array(In Place). In other words, arrange the elements into a sequence such that arr[1] >= arr[2] <= arr[3] >= arr[4] <= arr[5].....
 If there are multiple solutions, find the lexicographically smallest one. Note: The given array is sorted in ascending order, and you don't need to return anything to change the original array. Examples: Input: arr[] = [1, 2, 3, 4, 5]
 Output: [2, 1, 4, 3, 5]
 Explanation: Array elements after sorting it in the waveform are 2, 1, 4, 3, 5. Input: arr[] = [2, 4, 7, 8, 9, 10]
@@ -1135,7 +1135,7 @@ Input: arr[] = [1]
 Output: [1] Constraints:
 1 ≤ arr.size ≤ 106
 0 ≤ arr[i] ≤107",https://www.geeksforgeeks.org/problems/wave-array-1587115621/1?page=6&sortBy=submissions
-Find Pair Given Difference,EasyAccuracy:,27.25%Submissions:,"Given an array, arr[] and an integer x, return true if there exists a pair of elements in the array whose absolute difference is x, otherwise, return false. Examples: Input: arr[] = [5, 20, 3, 2, 5, 80], x = 78
+Find Pair Given Difference,Easy,27.25,"Given an array, arr[] and an integer x, return true if there exists a pair of elements in the array whose absolute difference is x, otherwise, return false. Examples: Input: arr[] = [5, 20, 3, 2, 5, 80], x = 78
 Output: true
 Explanation: Pair (2, 80) have an absolute difference of 78. Input: arr[] = [90, 70, 20, 80, 50], x = 45
 Output: false
@@ -1144,7 +1144,7 @@ Output: false Constraints:
 1<= arr.size() <=106 
 1<= arr[i] <=106 
 0<= x <=105",https://www.geeksforgeeks.org/problems/find-pair-given-difference1559/1?page=6&sortBy=submissions
-Longest Common Substring,MediumAccuracy:,42.69%Submissions:,"You are given two strings s1 and s2. Your task is to find the length of the longest common substring among the given strings. Examples: Input: s1 = ""ABCDGH"", s2 = ""ACDGHR""
+Longest Common Substring,Medium,42.69,"You are given two strings s1 and s2. Your task is to find the length of the longest common substring among the given strings. Examples: Input: s1 = ""ABCDGH"", s2 = ""ACDGHR""
 Output: 4
 Explanation: The longest common substring is ""CDGH"" with a length of 4. Input: s1 = ""abc"", s2 = ""acb""
 Output: 1
@@ -1152,7 +1152,7 @@ Explanation: The longest common substrings are ""a"", ""b"", ""c"" all having le
 Output: 0 Constraints:
 1 <= s1.size(), s2.size() <= 103
 Both strings may contain upper and lower case alphabets.",https://www.geeksforgeeks.org/problems/longest-common-substring1452/1?page=6&sortBy=submissions
-Get Min from Stack,MediumAccuracy:,22.59%Submissions:,"Given q queries, implement a Stack with three functionalities: Push an integer x onto the stack. Pop the top element from the stack and return it. If the stack is empty, return -1. GetMin, which retrieves the minimum element in the stack O(1) time. If the stack is empty, return -1. O(1) O(1) O(1) Examples: Input: q = 6, queries = [(1 2), (1 3), (2), (3), (1 1), (3)]
+Get Min from Stack,Medium,22.59,"Given q queries, implement a Stack with three functionalities: Push an integer x onto the stack. Pop the top element from the stack and return it. If the stack is empty, return -1. GetMin, which retrieves the minimum element in the stack O(1) time. If the stack is empty, return -1. O(1) O(1) O(1) Examples: Input: q = 6, queries = [(1 2), (1 3), (2), (3), (1 1), (3)]
 Output: 3, 2, 1
 Explanation: 
 push(2): Stack is {2}
@@ -1173,12 +1173,12 @@ Push 10 onto the stack. Stack is now {10}.
 Get the minimum element, which is 10. Constraints:
 1 <= q <= 100
 1 <= values on the stack <= 100",https://www.geeksforgeeks.org/problems/get-minimum-element-from-stack/1?page=6&sortBy=submissions
-Print 1 To N Without Loop,BasicAccuracy:,61.33%Submissions:,"Print numbers from 1 to n without the help of loops. You only need to complete the function printNos() that takes n as a parameter and prints the number from 1 to n recursively. Note: Don't print any newline, it will be added by the driver code. Examples: Input: n = 10
+Print 1 To N Without Loop,Basic,61.33,"Print numbers from 1 to n without the help of loops. You only need to complete the function printNos() that takes n as a parameter and prints the number from 1 to n recursively. Note: Don't print any newline, it will be added by the driver code. Examples: Input: n = 10
 Output: 1 2 3 4 5 6 7 8 9 10 Input: n = 5
 Output: 1 2 3 4 5 Input: n = 1
 Output: 1 Constraints:
 1 <= n <= 1000",https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1?page=6&sortBy=submissions
-Rotate a Linked List,MediumAccuracy:,39.95%Submissions:," left shift of the linked list by k nodes,  left shift Examples: Input: linkedlist: 2->4->7->8->9 , k = 3
+Rotate a Linked List,Medium,39.95," left shift of the linked list by k nodes,  left shift Examples: Input: linkedlist: 2->4->7->8->9 , k = 3
 Output: 8->9->2->4->7
 Explanation: Rotate 1: 4 -> 7 -> 8 -> 9 -> 2 Rotate 2: 7 -> 8 -> 9 -> 2 -> 4 Rotate 3: 8 -> 9 -> 2 -> 4 -> 7 Input: linkedlist: 1->2->3->4->5->6->7->8 , k = 4
 Output: 5->6->7->8->1->2->3->4 Expected Time Complexity: O(n)
@@ -1186,7 +1186,7 @@ Expected Auxiliary Space: O(1) Constraints:
 1 <= number of nodes <= 103
 1 <= node -> data <= 104
 1 <= k <= ",https://www.geeksforgeeks.org/problems/rotate-a-linked-list/1?page=6&sortBy=submissions
-Number of occurrence,EasyAccuracy:,59.34%Submissions:,"Given a sorted array, arr[] and a number target, you need to find the number of occurrences of target in arr[].  Examples : Input: arr[] = [1, 1, 2, 2, 2, 2, 3], target = 2
+Number of occurrence,Easy,59.34,"Given a sorted array, arr[] and a number target, you need to find the number of occurrences of target in arr[].  Examples : Input: arr[] = [1, 1, 2, 2, 2, 2, 3], target = 2
 Output: 4
 Explanation: target = 2 occurs 4 times in the given array so the output is 4. Input: arr[] = [1, 1, 2, 2, 2, 2, 3], target = 4
 Output: 0
@@ -1196,7 +1196,7 @@ Explanation: target = 12 occurs 3 times in the given array so the output is 3. C
 1 ≤ arr.size() ≤ 106
 1 ≤ arr[i] ≤ 106
 1 ≤ target ≤ 106",https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1?page=6&sortBy=submissions
-Product array puzzle,EasyAccuracy:,33.46%Submissions:,"Given an array, arr[], construct a product array, pro[] where each element pro[i] is the product of all elements in arr except arr[i]. Return this resultant array, pro[]. Examples: Input: arr[] = [10, 3, 5, 6, 2]
+Product array puzzle,Easy,33.46,"Given an array, arr[], construct a product array, pro[] where each element pro[i] is the product of all elements in arr except arr[i]. Return this resultant array, pro[]. Examples: Input: arr[] = [10, 3, 5, 6, 2]
 Output: [180, 600, 360, 300, 900]
 Explanation: For i=0, pro[i] = 3*5*6*2 = 180.
 For i=1, pro[i] = 10*5*6*2 = 600.
@@ -1207,15 +1207,15 @@ Output: [0, 12] Input: nums[] = [0]
 Output: [0] Constraints:
 1 <= arr.size() <= 103
 0 <= arr[i] <= 102",https://www.geeksforgeeks.org/problems/product-array-puzzle4525/1?page=6&sortBy=submissions
-Topological sort,MediumAccuracy:,56.52%Submissions:,"Given an adjacency list for a Directed Acyclic Graph (DAG) where adj[u] contains a list of all vertices v such that there exists a directed edge u -> v. Return topological sort for the given graph. Note: As there are multiple Topological orders possible, you may return any of them. If your returned Topological sort is correct then the output will be 1 else 0. As there are multiple Topological orders possible, you may return any of them. If your returned Topological sort is correct then the output will be 1 else 0. Examples: Input: adj = [[], [0], [0], [0]] Output: 1 Explanation: The output 1 denotes that the order is valid. Few valid Topological orders for the given graph are:
+Topological sort,Medium,56.52,"Given an adjacency list for a Directed Acyclic Graph (DAG) where adj[u] contains a list of all vertices v such that there exists a directed edge u -> v. Return topological sort for the given graph. Note: As there are multiple Topological orders possible, you may return any of them. If your returned Topological sort is correct then the output will be 1 else 0. As there are multiple Topological orders possible, you may return any of them. If your returned Topological sort is correct then the output will be 1 else 0. Examples: Input: adj = [[], [0], [0], [0]] Output: 1 Explanation: The output 1 denotes that the order is valid. Few valid Topological orders for the given graph are:
 [3, 2, 1, 0] Input: adj = [[], [3], [3], [], [0,1], [0,2]]
 Output: 1
 Explanation: The output 1 denotes that the order is valid. Few valid Topological orders for the graph are:
 [4, 5, 0, 1, 2, 3]
 [5, 2, 4, 0, 1, 3] Constraints:
 2 ",https://www.geeksforgeeks.org/problems/topological-sort/1?page=6&sortBy=submissions
-Rearrange Array Alternately,MediumAccuracy:,35.15%Submissions:,,https://www.geeksforgeeks.org/problems/-rearrange-array-alternately-1587115620/1?page=6&sortBy=submissions
-Partition Equal Subset Sum,MediumAccuracy:,30.24%Submissions:,"Given an array arr[], return true if it can be partitioned into two parts such that the sum of elements in both parts is the same, otherwise, false. Examples: Input: arr = [1, 5, 11, 5]
+Rearrange Array Alternately,Medium,35.15,,https://www.geeksforgeeks.org/problems/-rearrange-array-alternately-1587115620/1?page=6&sortBy=submissions
+Partition Equal Subset Sum,Medium,30.24,"Given an array arr[], return true if it can be partitioned into two parts such that the sum of elements in both parts is the same, otherwise, false. Examples: Input: arr = [1, 5, 11, 5]
 Output: true
 Explanation: The two parts are [1, 5, 5] and [11]. Input: arr = [1, 3, 5]
 Output: false
@@ -1223,13 +1223,13 @@ Explanation: This array can never be partitioned into two such parts. Constraint
 1 ≤ arr.size ≤ 100
 1 ≤ arr[i] ≤ 1000
 n*sum of elements ≤ 5*106",https://www.geeksforgeeks.org/problems/subset-sum-problem2014/1?page=6&sortBy=submissions
-First n Fibonacci,BasicAccuracy:,29.92%Submissions:,"Given a number n, return a list containing the first n Fibonacci numbers.
+First n Fibonacci,Basic,29.92,"Given a number n, return a list containing the first n Fibonacci numbers.
 
 Note: The first two number of the series are 1 and 1. Note: The first two number of the series are 1 and 1. Examples: Input: n = 5
 Output: [1, 1, 2, 3, 5] Input: n = 7
 Output: [1, 1, 2, 3, 5, 8, 13] Input: n = 2
 Output: [1, 1] Constraints:",https://www.geeksforgeeks.org/problems/print-first-n-fibonacci-numbers1002/1?page=6&sortBy=submissions
-Maximize The Cut Segments,MediumAccuracy:,24.29%Submissions:,"Given an integer n denoting the Length of a line segment. You need to cut the line segment in such a way that the cut length of a line segment each time is either x , y or z. Here x, y, and z are integers.
+Maximize The Cut Segments,Medium,24.29,"Given an integer n denoting the Length of a line segment. You need to cut the line segment in such a way that the cut length of a line segment each time is either x , y or z. Here x, y, and z are integers.
 After performing all the cut operations, your total number of cut segments must be maximum. Return the maximum number of cut segments possible. Note: if no segment can be cut then return 0. Examples: Input: n = 4, x = 2, y = 1, z = 1
 Output: 4
 Explanation: Total length is 4, and the cut lengths are 2, 1 and 1.  We can make maximum 4 segments each of length 1. Input: n = 5, x = 5, y = 3, z = 2
@@ -1238,7 +1238,7 @@ Explanation: Here total length is 5, and the cut lengths are 5, 3 and 2. We can 
 Output: 0
 Explanation: Here the total length is 7, and the cut lengths are 8, 9, and 10. We cannot cut the segment into lengths that fully utilize the segment, so the output is 0. Constraints
 1 <= n, x, y, z <= 104",https://www.geeksforgeeks.org/problems/cutted-segments1642/1?page=7&sortBy=submissions
-Chocolate Distribution Problem,EasyAccuracy:,49.91%Submissions:,"Given an array arr[] of positive integers, where each value represents the number of chocolates in a packet. Each packet can have a variable number of chocolates. There are m students, the task is to distribute chocolate packets among m students such that -
+Chocolate Distribution Problem,Easy,49.91,"Given an array arr[] of positive integers, where each value represents the number of chocolates in a packet. Each packet can have a variable number of chocolates. There are m students, the task is to distribute chocolate packets among m students such that -
       i. Each student gets exactly one packet.
      ii. The difference between maximum number of chocolates given to a student and minimum number of chocolates given to a student is minimum and return that minimum possible difference. Examples: Input: arr = [3, 4, 1, 9, 56, 7, 9, 12], m = 5
 Output: 6
@@ -1249,14 +1249,14 @@ Output: 55
 Explanation: With 5 packets for 5 students, each student will receive one packet, so the difference is 56 - 1 = 55. Constraints:
 1 ≤ m <= arr.size ≤ 105
 1 ≤ arr[i] ≤ 109",https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1?page=7&sortBy=submissions
-Remove duplicates from an unsorted linked list,EasyAccuracy:,45.95%Submissions:,"Examples: Input: LinkedList: 5->2->2->4
+Remove duplicates from an unsorted linked list,Easy,45.95,"Examples: Input: LinkedList: 5->2->2->4
 Output: 5->2->4
 Explanation: Given linked list elements are 5->2->2->4, in which 2 is repeated only. So, we will delete the extra repeated elements 2 from the linked list and the resultant linked list will contain 5->2->4 Input: LinkedList: 2->2->2->2->2
 Output: 2
 Explanation:Given linked list elements are 2->2->2->2->2, in which 2 is repeated. So, we will delete the extra repeated elements 2 from the linked list and the resultant linked list will contain only 2. Expected Time Complexity: O(n)
 Expected Space Complexity: O(n) Constraints:
 1 <= number of nodes <= 106",https://www.geeksforgeeks.org/problems/remove-duplicates-from-an-unsorted-linked-list/1?page=7&sortBy=submissions
-Minimum distance in an Array,EasyAccuracy:,19.75%Submissions:,"You are given an array, arr[]. Find the minimum index based distance between two distinct elements of the array, x and y. Return -1, if either x or y does not exist in the array. Examples: Input: arr[] = [1, 2, 3, 2], x = 1, y = 2
+Minimum distance in an Array,Easy,19.75,"You are given an array, arr[]. Find the minimum index based distance between two distinct elements of the array, x and y. Return -1, if either x or y does not exist in the array. Examples: Input: arr[] = [1, 2, 3, 2], x = 1, y = 2
 Output: 1
 Explanation: x = 1 and y = 2. There are two distances between x and y, which are 1 and 3 out of which the least is 1. Input: arr[] = [86, 39, 90, 67, 84, 66, 62], x = 42, y = 12
 Output: -1
@@ -1266,13 +1266,13 @@ Explanation: The distance between x = 10 (index 0) and y = 50 (index 4) is 4, wh
 1 <= arr.size() <= 105
 0 <= arr[i], x, y <= 105
 x != y",https://www.geeksforgeeks.org/problems/minimum-distance-between-two-numbers/1?page=7&sortBy=submissions
-Bubble Sort,EasyAccuracy:,59.33%Submissions:,"Given an array, arr[]. Sort the array using bubble sort algorithm. Examples : Input: arr[] = [4, 1, 3, 9, 7]
+Bubble Sort,Easy,59.33,"Given an array, arr[]. Sort the array using bubble sort algorithm. Examples : Input: arr[] = [4, 1, 3, 9, 7]
 Output: [1, 3, 4, 7, 9] Input: arr[] = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] Input: arr[] = [1, 2, 3, 4, 5]
 Output: [1, 2, 3, 4, 5] Explanation: An array that is already sorted should remain unchanged after applying bubble sort. Constraints:
 1 <= arr.size() <= 103
 1 <= arr[i] <= 103",https://www.geeksforgeeks.org/problems/bubble-sort/1?page=7&sortBy=submissions
-Quick Sort,MediumAccuracy:,55.23%Submissions:,"Implement Quick Sort, a Divide and Conquer algorithm, to sort an array, arr[] in ascending order. Given an array, arr[], with starting index low and ending index high, complete the functions partition() and quickSort(). Use the last element as the pivot so that all elements less than or equal to the pivot come before it, and elements greater than the pivot follow it. Note: The low and high are inclusive. Examples: Input: arr[] = [4, 1, 3, 9, 7]
+Quick Sort,Medium,55.23,"Implement Quick Sort, a Divide and Conquer algorithm, to sort an array, arr[] in ascending order. Given an array, arr[], with starting index low and ending index high, complete the functions partition() and quickSort(). Use the last element as the pivot so that all elements less than or equal to the pivot come before it, and elements greater than the pivot follow it. Note: The low and high are inclusive. Examples: Input: arr[] = [4, 1, 3, 9, 7]
 Output: [1, 3, 4, 7, 9]
 Explanation: After sorting, all elements are arranged in ascending order. Input: arr[] = [2, 1, 6, 10, 4, 1, 3, 9, 7]
 Output: [1, 1, 2, 3, 4, 6, 7, 9, 10]
@@ -1281,7 +1281,7 @@ Output: [5, 5, 5, 5]
 Explanation: All elements are identical, so the array remains unchanged. Constraints:
 1 <= arr.size() <= 103
 1 <= arr[i] <= 104",https://www.geeksforgeeks.org/problems/quick-sort/1?page=7&sortBy=submissions
-Find Kth Rotation,EasyAccuracy:,23.16%Submissions:,"Given an increasing sorted rotated array arr of distinct integers. The array is right-rotated k times. Find the value of k.
+Find Kth Rotation,Easy,23.16,"Given an increasing sorted rotated array arr of distinct integers. The array is right-rotated k times. Find the value of k.
 Let's suppose we have an array arr = [2, 4, 6, 9], so if we rotate it by 2 times so that it will look like this:
 After 1st Rotation : [9, 2, 4, 6]
 After 2nd Rotation : [6, 9, 2, 4] Examples: Input: arr = [5, 1, 2, 3, 4]
@@ -1292,14 +1292,14 @@ Explanation: The given array is not rotated. Expected Time Complexity: O(log(n))
 Expected Auxiliary Space: O(1) Constraints:
 1 <= n <=105
 1 <= arri <= 107",https://www.geeksforgeeks.org/problems/rotation4723/1?page=7&sortBy=submissions
-String Rotated by 2 Places,EasyAccuracy:,32.7%Submissions:,"Given two strings s1 and s2. Return true if the string s2 can be obtained by rotating (in any direction) string s1 by exactly 2 places, otherwise, false. Examples: Input: s1 = ""amazon"", s2 = ""azonam""
+String Rotated by 2 Places,Easy,32.7,"Given two strings s1 and s2. Return true if the string s2 can be obtained by rotating (in any direction) string s1 by exactly 2 places, otherwise, false. Examples: Input: s1 = ""amazon"", s2 = ""azonam""
 Output: true
 Explanation: ""amazon"" can be rotated anti-clockwise by two places, which will make it as ""azonam"". Input: s1 = ""geeksforgeeks"", s2 = ""geeksgeeksfor""
 Output: false
 Explanation: If we rotate ""geeksforgeeks"" by two place in any direction, we won't get ""geeksgeeksfor"". Input: s1 = ""ab"", s2 = ""ab""
 Output: false Challenge: Try doing it in O(1) space complexity Constraints:
 1 ≤ s1.length, s2.length ≤ 105",https://www.geeksforgeeks.org/problems/check-if-string-is-rotated-by-two-places-1587115620/1?page=7&sortBy=submissions
-Implement stack using array,BasicAccuracy:,54.76%Submissions:,"Examples : Input: 1 2 1 3 2 1 4 2 
+Implement stack using array,Basic,54.76,"Examples : Input: 1 2 1 3 2 1 4 2 
 Output: 3, 4
 Explanation: 
 push(2) the stack will be {2}
@@ -1311,7 +1311,7 @@ pop() poped element will be 4 Input: 2 1 4 1 5 2
 Output: -1, 5 Expected Time Complexity: O(1) Expected Space Complexity: O(1) Constraints:
 1 <= numbers of calls made to push, pop <= 100
 1 <= x <= 100",https://www.geeksforgeeks.org/problems/implement-stack-using-array/1?page=7&sortBy=submissions
-Search in Rotated Sorted Array,MediumAccuracy:,37.64%Submissions:,"Given a sorted (in ascending order) and rotated array arr of distinct elements which may be rotated at some point and given an element key, the task is to find the index of the given element key in the array arr. The whole array Note:- 0-based indexing is followed & returns -1 if the key is not present. Examples : Input: arr[] = [5, 6, 7, 8, 9, 10, 1, 2, 3], key = 10
+Search in Rotated Sorted Array,Medium,37.64,"Given a sorted (in ascending order) and rotated array arr of distinct elements which may be rotated at some point and given an element key, the task is to find the index of the given element key in the array arr. The whole array Note:- 0-based indexing is followed & returns -1 if the key is not present. Examples : Input: arr[] = [5, 6, 7, 8, 9, 10, 1, 2, 3], key = 10
 Output: 5
 Explanation: 10 is found at index 5. Input: arr[] = [3, 5, 1, 2], key = 6 Output: -1 Explanation: There is no element that has value 6. Input: arr[] = [33, 42, 72, 99], key = 42
 Output: 1
@@ -1319,7 +1319,7 @@ Explanation: 42 is found at index 1. Constraints:
 1 ≤ arr.size() ≤ 106
 0 ≤ arr[i] ≤ 106
 1 ≤ key ≤ 105",https://www.geeksforgeeks.org/problems/search-in-a-rotated-array4618/1?page=7&sortBy=submissions
-Non Repeating Character,EasyAccuracy:,40.43%Submissions:,"Given a string s consisting of lowercase Latin Letters. Return the first non-repeating character in s. If there is no non-repeating character, return '$'.
+Non Repeating Character,Easy,40.43,"Given a string s consisting of lowercase Latin Letters. Return the first non-repeating character in s. If there is no non-repeating character, return '$'.
 Note: When you return '$' driver code will output -1. Examples: Input: s = ""geeksforgeeks""
 Output: 'f'
 Explanation: In the given string, 'f' is the first character in the string which does not repeat. Input: s = ""racecar""
@@ -1328,7 +1328,7 @@ Explanation: In the given string, 'e' is the only character in the string which 
 Output: '$'
 Explanation: All the characters in the given string are repeating. Constraints:
 1 <= s.size() <= 105",https://www.geeksforgeeks.org/problems/non-repeating-character-1587115620/1?page=7&sortBy=submissions
-Move All Zeroes to End,EasyAccuracy:,45.51%Submissions:,"Given an array arr[]. Push all the zeros of the given array to the right end of the array while maintaining the order of non-zero elements. Do the mentioned change in the array in place. Examples: Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
+Move All Zeroes to End,Easy,45.51,"Given an array arr[]. Push all the zeros of the given array to the right end of the array while maintaining the order of non-zero elements. Do the mentioned change in the array in place. Examples: Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
 Output: [1, 2, 4, 3, 5, 0, 0, 0]
 Explanation: There are three 0s that are moved to the end. Input: arr[] = [10, 20, 30]
 Output: [10, 20, 30]
@@ -1337,7 +1337,7 @@ Output: [0, 0]
 Explanation: No change in array as there are all 0s. Constraints:
 1 ≤ arr.size() ≤ 105
 0 ≤ arr[i] ≤ 105",https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1?page=7&sortBy=submissions
-Stickler Thief,MediumAccuracy:,37.98%Submissions:,"Stickler the thief wants to loot money from n houses arranged in a line. He cannot loot two consecutive houses and aims to maximize his total loot. Given an array, arr[] where arr[i] represents the amount of money in the i-th house, find the maximum amount he can loot.  wants to loot money from n houses arranged in a line. He cannot loot two consecutive houses and aims to maximize his total loot. Given an array, arr[] where arr[i] represents the amount of money in the i-th house, find the maximum amount he can loot. Examples: Input: arr[] = [6, 5, 5, 7, 4]
+Stickler Thief,Medium,37.98,"Stickler the thief wants to loot money from n houses arranged in a line. He cannot loot two consecutive houses and aims to maximize his total loot. Given an array, arr[] where arr[i] represents the amount of money in the i-th house, find the maximum amount he can loot.  wants to loot money from n houses arranged in a line. He cannot loot two consecutive houses and aims to maximize his total loot. Given an array, arr[] where arr[i] represents the amount of money in the i-th house, find the maximum amount he can loot. Examples: Input: arr[] = [6, 5, 5, 7, 4]
 Output: 15
 Explanation: Maximum amount he can get by looting 1st, 3rd and 5th house. Which is 6+5+4=15. Input: arr[] = [1, 5, 3]
 Output: 5

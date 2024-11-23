@@ -11,6 +11,8 @@ const User = require('./Models/User.js')
 require('dotenv').config();
 connectToMongo()
 const connections = {}; // Store user connections based on uid
+const waitingQueue = []; // Queue for users waiting to connect
+const activeMatches = {}; // Track active matches { matchId: [uid1, uid2] }
 
 wss.on('connection', (ws) => {
     let uid; // Track the current user's UID
@@ -26,7 +28,8 @@ wss.on('connection', (ws) => {
                 return;
             }
 
-            uid = data.uid; // Set the UID for this connection
+            uid = data.uid;
+
             if (connections[uid]) {
                 ws.send(JSON.stringify({ type: 'error', message: 'You are already connected' }));
                 return;
@@ -35,51 +38,67 @@ wss.on('connection', (ws) => {
             connections[uid] = ws; // Map the WebSocket to this UID
             console.log(`${uid} joined`);
 
-            // Notify the user that they are connected
-            ws.send(JSON.stringify({ type: 'status', message: 'Waiting for opponent...' }));
-
-            // Find a free opponent
-            const opponentUid = Object.keys(connections).find(async (id) => {
-                const user = await User.findOne({ _id: id });
-                return id !== uid && user.isFree;
-            });
-
-            if (opponentUid) {
+            // Check if there's a waiting user
+            if (waitingQueue.length > 0) {
+                const opponentUid = waitingQueue.shift(); // Get the first user from the queue
                 const opponentWs = connections[opponentUid];
 
                 // Notify both users that the game is ready
                 ws.send(JSON.stringify({ type: 'ready', opponentUid }));
                 opponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid }));
 
+                // Mark the match as active
+                const matchId = `${uid}-${opponentUid}`;
+                activeMatches[matchId] = [uid, opponentUid];
+
                 // Update isFree to false for both users
-                await User.updateMany(
-                    { _id: { $in: [uid, opponentUid] } },
-                    { $set: { isFree: false } }
-                );
+                await User.updateMany({ _id: { $in: [uid, opponentUid] } }, { $set: { isFree: false } });
+
+                console.log(activeMatches)
             } else {
-                // Notify the user that no one is online
-                ws.send(JSON.stringify({ type: 'error', message: 'No one is online. Try again later.' }));
-                delete connections[uid]; // Remove the connection since no game was created
+                // Add the user to the waiting queue
+                waitingQueue.push(uid);
+                console.log("You are in the queue")
+                ws.send(JSON.stringify({ type: 'status', message: 'Waiting for an opponent...' }));
             }
         } else if (data.type === 'click') {
             // Handle button click and notify both users
-            const opponentUid = Object.keys(connections).find((id) => id !== uid);
-            if (opponentUid && connections[opponentUid]) {
-                // Notify both players of the result
-                connections[uid].send(
-                    JSON.stringify({ type: 'result', winner: uid, message: 'You Win!' })
-                );
-                connections[opponentUid].send(
-                    JSON.stringify({ type: 'result', winner: uid, message: 'You Lose!' })
-                );
+            const match = Object.entries(activeMatches).find(([_, players]) => players.includes(uid));
+            if (match) {
+                const [matchId, players] = match;
+                const opponentUid = players.find((id) => id !== uid);
 
-                // Mark both users as free after the game
-                await User.updateMany(
-                    { _id: { $in: [uid, opponentUid] } },
-                    { $set: { isFree: true } }
-                );
-            } else {
-                ws.send(JSON.stringify({ type: 'error', message: 'Opponent not found.' }));
+                if (connections[uid] && connections[opponentUid]) {
+                    connections[uid].send(JSON.stringify({ type: 'result', winner: uid, message: 'You Win!' }));
+                    connections[opponentUid].send(JSON.stringify({ type: 'result', winner: uid, message: 'You Lose!' }));
+
+                    // End the match and free both users
+                    delete activeMatches[matchId];
+                    await User.updateMany(
+                        { _id: { $in: [uid, opponentUid] } },
+                        { $set: { isFree: true } }
+                    );
+
+                    // Notify waiting users if any
+                    if (waitingQueue.length > 0) {
+                        const newOpponentUid = waitingQueue.shift();
+                        const newOpponentWs = connections[newOpponentUid];
+
+                        // Notify the next pair
+                        connections[uid].send(JSON.stringify({ type: 'ready', opponentUid: newOpponentUid }));
+                        newOpponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid }));
+
+                        // Start a new match
+                        const newMatchId = `${uid}-${newOpponentUid}`;
+                        activeMatches[newMatchId] = [uid, newOpponentUid];
+
+                        // Update isFree to false for both users
+                        await User.updateMany(
+                            { _id: { $in: [uid, newOpponentUid] } },
+                            { $set: { isFree: false } }
+                        );
+                    }
+                }
             }
         }
     });
@@ -88,14 +107,33 @@ wss.on('connection', (ws) => {
         console.log(`${uid} disconnected`);
         delete connections[uid]; // Remove the connection when the user disconnects
 
-        // Mark the user as free if they disconnect during a game
-        if (uid) {
+        // Remove user from waiting queue if present
+        const queueIndex = waitingQueue.indexOf(uid);
+        if (queueIndex !== -1) waitingQueue.splice(queueIndex, 1);
+
+        // End the match if the user was in an active match
+        const match = Object.entries(activeMatches).find(([_, players]) => players.includes(uid));
+        if (match) {
+            const [matchId, players] = match;
+            const opponentUid = players.find((id) => id !== uid);
+
+            // Notify the opponent that the user disconnected
+            if (connections[opponentUid]) {
+                connections[opponentUid].send(JSON.stringify({ type: 'error', message: 'Opponent disconnected' }));
+                waitingQueue.push(opponentUid); // Re-add the opponent to the queue
+            }
+
+            delete activeMatches[matchId]; // Remove the match
+            console.log(matchId, 'ended');
             await User.updateOne({ _id: uid }, { $set: { isFree: true } });
         }
     });
 });
 
 console.log('WebSocket server running on http://localhost:8080');
+
+console.log('WebSocket server running on http://localhost:8080');
+
 
 
 app.use(cors());
