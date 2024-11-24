@@ -7,7 +7,7 @@ const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
 var cors = require('cors');
 const User = require('./Models/User.js')
-
+const Question = require('./Models/Questions.js')
 require('dotenv').config();
 connectToMongo()
 const connections = {}; // Store user connections based on uid
@@ -22,6 +22,7 @@ wss.on('connection', (ws) => {
 
         if (data.type === 'join') {
             // Fetch user by UID
+
             const user = await User.findOne({ _id: data.uid });
             if (!user) {
                 ws.send(JSON.stringify({ type: 'error', message: 'User not found' }));
@@ -44,13 +45,17 @@ wss.on('connection', (ws) => {
                 const opponentWs = connections[opponentUid];
 
                 // Notify both users that the game is ready
-                ws.send(JSON.stringify({ type: 'ready', opponentUid }));
-                opponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid }));
+                const questions = await Question.aggregate([{ $sample: { size: 1 } }]);
+
+
+                ws.send(JSON.stringify({ type: 'ready', opponentUid, question: questions[0] }));
+                opponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid, question: questions[0] }));
 
                 // Mark the match as active
                 const matchId = `${uid}-${opponentUid}`;
                 activeMatches[matchId] = [uid, opponentUid];
-
+               
+                // Send the question to the frontend
                 // Update isFree to false for both users
                 await User.updateMany({ _id: { $in: [uid, opponentUid] } }, { $set: { isFree: false } });
 
@@ -61,6 +66,7 @@ wss.on('connection', (ws) => {
                 console.log("You are in the queue")
                 ws.send(JSON.stringify({ type: 'status', message: 'Waiting for an opponent...' }));
             }
+
         } else if (data.type === 'click') {
             // Handle button click and notify both users
             const match = Object.entries(activeMatches).find(([_, players]) => players.includes(uid));
@@ -132,9 +138,6 @@ wss.on('connection', (ws) => {
 
 console.log('WebSocket server running on http://localhost:8080');
 
-console.log('WebSocket server running on http://localhost:8080');
-
-
 
 app.use(cors());
 app.use(express.json());
@@ -143,7 +146,7 @@ app.use('/api/judgeapi', require("./Routes/judgeapi"))
 
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${port}`)
 })
 
 module.exports = router

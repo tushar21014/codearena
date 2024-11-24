@@ -26,9 +26,9 @@ const CodeEditor = () => {
   // Map languages to their respective CodeMirror extensions
   const languageExtensions: Record<string, any> = {
     javascript: javascript({ linter: true }),
-    python: python({linter: true}),
-    java: java({linter: true}),
-    cpp: cpp({linter: true}),
+    python: python({ linter: true }),
+    java: java({ linter: true }),
+    cpp: cpp({ linter: true }),
   };
 
   const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -42,6 +42,11 @@ const CodeEditor = () => {
       setError("Error changing the language. Please try again.");
     }
   };
+
+  const handleReset = () => {
+    setCode("");
+    
+  }
 
   const handleRun = async () => {
     setLoading(true);
@@ -72,7 +77,7 @@ const CodeEditor = () => {
       setError(null); // Clear any existing errors
     } catch (err: any) {
       setError(err.message || "An unexpected error occurred.");
-    } finally{
+    } finally {
       setLoading(false);
     }
   };
@@ -80,132 +85,142 @@ const CodeEditor = () => {
   return (
     <div>
       {/* Language Selection */}
-      <div style={{ marginBottom: "10px" }}>
-        <label htmlFor="language-select" style={{ marginRight: "10px" }}>
-          Select Language:
-        </label>
-        <select
-          id="language-select"
-          value={language}
-          onChange={handleLanguageChange}
-          className="text-black"
-          style={{ padding: "5px", fontSize: "16px" }}
-        >
-          <option value="javascript">JavaScript</option>
-          <option value="python">Python</option>
-          <option value="java">Java</option>
-          <option value="cpp">C++</option>
-        </select>
+      <div className="flex flex-row justify-between">
+
+        <div style={{ marginBottom: "10px" }}>
+          <label htmlFor="language-select" style={{ marginRight: "10px" }}>
+            Select Language:
+          </label>
+          <select
+            id="language-select"
+            value={language}
+            onChange={handleLanguageChange}
+            className="text-black"
+            style={{ padding: "5px", fontSize: "16px" }}
+          >
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="cpp">C++</option>
+          </select>
+        </div>
+
+        <div onClick={handleReset} className="cursor-pointer">
+          Reset
+        </div>
+
       </div>
+
+
 
       {/* CodeMirror Editor */}
       <CodeMirror
-  value={code}
-  height="500px"
-  extensions={[
-    languageExtensions[language],
-    autocompletion(),
-    lintGutter(),
-    linter((view) => {
-      const diagnostics: { from: number; to: number; severity: string; message: string; }[] = [];
-      const lines = view.state.doc.toString().split("\n");
+        value={code}
+        height="500px"
+        extensions={[
+          languageExtensions[language],
+          autocompletion(),
+          lintGutter(),
+          linter((view) => {
+            const diagnostics: { from: number; to: number; severity: string; message: string; }[] = [];
+            const lines = view.state.doc.toString().split("\n");
 
-      switch (language) {
-        case "javascript":
-          // Linter for JavaScript
-          lines.forEach((line, i) => {
-            if (line.includes("console.log")) {
-              diagnostics.push({
-                from: view.state.doc.line(i + 1).from,
-                to: view.state.doc.line(i + 1).to,
-                severity: "warning",
-                message: "Avoid using console.log in production code.",
-              });
-            }
-          });
-          break;
-
-        case "python":
-          // Linter for Python
-          lines.forEach((line, i) => {
-            if (line.includes("print(")) {
-              diagnostics.push({
-                from: view.state.doc.line(i + 1).from,
-                to: view.state.doc.line(i + 1).to,
-                severity: "warning",
-                message: "Avoid using print statements in production code.",
-              });
-            }
-            if (line.startsWith(" ")) {
-              const spaces = line.match(/^ +/)?.[0].length || 0;
-              if (spaces % 4 !== 0) {
-                diagnostics.push({
-                  from: view.state.doc.line(i + 1).from,
-                  to: view.state.doc.line(i + 1).to,
-                  severity: "warning",
-                  message: "Python recommends 4 spaces for indentation.",
+            switch (language) {
+              case "javascript":
+                // Linter for JavaScript
+                lines.forEach((line, i) => {
+                  if (line.includes("console.log")) {
+                    diagnostics.push({
+                      from: view.state.doc.line(i + 1).from,
+                      to: view.state.doc.line(i + 1).to,
+                      severity: "warning",
+                      message: "Avoid using console.log in production code.",
+                    });
+                  }
                 });
-              }
-            }
-          });
-          break;
+                break;
 
-        case "java":
-          // Linter for Java
-          lines.forEach((line, i) => {
-            if (line.includes("System.out.println")) {
-              diagnostics.push({
-                from: view.state.doc.line(i + 1).from,
-                to: view.state.doc.line(i + 1).to,
-                severity: "warning",
-                message: "Avoid using System.out.println in production code.",
-              });
-            }
-            if (line.includes("class ") && !line.trim().endsWith("{")) {
-              diagnostics.push({
-                from: view.state.doc.line(i + 1).from,
-                to: view.state.doc.line(i + 1).to,
-                severity: "error",
-                message: "Classes in Java should start with an opening '{' on the same line.",
-              });
-            }
-          });
-          break;
+              case "python":
+                // Linter for Python
+                lines.forEach((line, i) => {
+                  if (line.includes("print(")) {
+                    diagnostics.push({
+                      from: view.state.doc.line(i + 1).from,
+                      to: view.state.doc.line(i + 1).to,
+                      severity: "warning",
+                      message: "Avoid using print statements in production code.",
+                    });
+                  }
+                  if (line.startsWith(" ")) {
+                    const spaces = line.match(/^ +/)?.[0].length || 0;
+                    if (spaces % 4 !== 0) {
+                      diagnostics.push({
+                        from: view.state.doc.line(i + 1).from,
+                        to: view.state.doc.line(i + 1).to,
+                        severity: "warning",
+                        message: "Python recommends 4 spaces for indentation.",
+                      });
+                    }
+                  }
+                });
+                break;
 
-        case "cpp":
-        case "c":
-          // Linter for C++/C
-          lines.forEach((line, i) => {
-            if (line.includes("printf(")) {
-              diagnostics.push({
-                from: view.state.doc.line(i + 1).from,
-                to: view.state.doc.line(i + 1).to,
-                severity: "warning",
-                message: "Avoid using printf in modern C++ (consider std::cout).",
-              });
-            }
-            if (line.includes("using namespace std;")) {
-              diagnostics.push({
-                from: view.state.doc.line(i + 1).from,
-                to: view.state.doc.line(i + 1).to,
-                severity: "warning",
-                message: "Avoid using 'using namespace std;' in header files.",
-              });
-            }
-          });
-          break;
+              case "java":
+                // Linter for Java
+                lines.forEach((line, i) => {
+                  if (line.includes("System.out.println")) {
+                    diagnostics.push({
+                      from: view.state.doc.line(i + 1).from,
+                      to: view.state.doc.line(i + 1).to,
+                      severity: "warning",
+                      message: "Avoid using System.out.println in production code.",
+                    });
+                  }
+                  if (line.includes("class ") && !line.trim().endsWith("{")) {
+                    diagnostics.push({
+                      from: view.state.doc.line(i + 1).from,
+                      to: view.state.doc.line(i + 1).to,
+                      severity: "error",
+                      message: "Classes in Java should start with an opening '{' on the same line.",
+                    });
+                  }
+                });
+                break;
 
-        default:
-          // No linter for unsupported languages
-          break;
-      }
+              case "cpp":
+              case "c":
+                // Linter for C++/C
+                lines.forEach((line, i) => {
+                  if (line.includes("printf(")) {
+                    diagnostics.push({
+                      from: view.state.doc.line(i + 1).from,
+                      to: view.state.doc.line(i + 1).to,
+                      severity: "warning",
+                      message: "Avoid using printf in modern C++ (consider std::cout).",
+                    });
+                  }
+                  if (line.includes("using namespace std;")) {
+                    diagnostics.push({
+                      from: view.state.doc.line(i + 1).from,
+                      to: view.state.doc.line(i + 1).to,
+                      severity: "warning",
+                      message: "Avoid using 'using namespace std;' in header files.",
+                    });
+                  }
+                });
+                break;
 
-      return diagnostics;
-    }),
-  ]}
-  theme="dark"
-  onChange={(value) => setCode(value || "")}
-/>
+              default:
+                // No linter for unsupported languages
+                break;
+            }
+
+            return diagnostics;
+          }),
+        ]}
+        theme="dark"
+        onChange={(value) => setCode(value || "")}
+      />
 
 
       {/* Run Button */}
@@ -216,13 +231,13 @@ const CodeEditor = () => {
         >
           Running...
         </button>
-      </>:<>
-      <button
-        onClick={handleRun} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        style={{ marginTop: "10px", padding: "10px 20px", fontSize: "16px" }}
-      >
-        Run
-      </button>
+      </> : <>
+        <button
+          onClick={handleRun} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          style={{ marginTop: "10px", padding: "10px 20px", fontSize: "16px" }}
+        >
+          Run
+        </button>
       </>}
       {/* Output and Errors */}
       {output && (

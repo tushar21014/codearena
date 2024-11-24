@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import CodeEditor from '../components/CodeEditor';
 
 export default function Game() {
     const [uid, setUid] = useState('');
@@ -8,7 +9,14 @@ export default function Game() {
     const [isReady, setIsReady] = useState(false);
     const [winner, setWinner] = useState(null);
     const [opponentUid, setOpponentUid] = useState(null);
+    interface Question {
+        Content: string;
+        Accuracy: string;
+        Difficulty: string;
+        // Add other properties if necessary
+    }
 
+    const [question, setQuestion] = useState<Question | null>(null);
     // Ref to store the WebSocket instance
     const wsRef = useRef<WebSocket | null>(null);
 
@@ -22,6 +30,7 @@ export default function Game() {
         wsRef.current = ws;
 
         ws.onopen = () => {
+
             ws.send(JSON.stringify({ type: 'join', uid: userUid }));
         };
 
@@ -31,9 +40,13 @@ export default function Game() {
             if (data.type === 'status') {
                 setStatus(data.message);
             } else if (data.type === 'ready') {
+                ws.send(JSON.stringify({ type: 'ready', uid: userUid }));
                 setOpponentUid(data.opponentUid);
-                setStatus('Game Started! Click the button!');
+                setStatus('Game Started!');
                 setIsReady(true);
+                setQuestion(data.question);
+                console.log(data.question);
+
             } else if (data.type === 'result') {
                 setWinner(data.winner);
                 setStatus(data.winner === userUid ? 'You Win!' : 'You Lose!');
@@ -60,20 +73,18 @@ export default function Game() {
     };
 
     return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>{status}</h1>
+        <div>
+            <h1 style={{ textAlign: 'center', marginTop: '50px' }}>{status}</h1>
             {opponentUid && <p>Playing against: {opponentUid}</p>}
-            {isReady && (
-                <button
-                    onClick={handleClick}
-                    style={{
-                        padding: '10px 20px',
-                        fontSize: '20px',
-                        cursor: 'pointer',
-                    }}
-                >
-                    Click Me!
-                </button>
+            {isReady && question && (
+                <div className='flex flex-row w-[90vw] m-auto'>
+                    <div
+                        className="w-1/2"
+                        dangerouslySetInnerHTML={{ __html: question.Content }}
+                    ></div>
+                    <div className='w-1/2'> <CodeEditor /></div>
+
+                </div>
             )}
             {winner && <p>Winner: {winner}</p>}
         </div>
