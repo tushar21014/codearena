@@ -64,7 +64,7 @@ const CodeEditor = () => {
       }, {
         headers: {
           "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
-          "X-RapidAPI-Key": "e7c11bc221mshe1d303a0008069ap18935djsn37ff23422f3b", // Replace with your RapidAPI key
+          "X-RapidAPI-Key": "", // Replace with your RapidAPI key
         },
         params: {
           base64_encoded: "false",
