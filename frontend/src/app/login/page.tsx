@@ -52,7 +52,7 @@ const Login = () => {
                 localStorage.setItem('id', json.id);
                 // calltoast("Logged In successfully!", "success")
                 // navigate('/')
-                router.push('/game')
+                router.push('/')
             }
         } catch (error) {
             console.log(error);

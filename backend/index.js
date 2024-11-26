@@ -5,6 +5,8 @@ const app = express()
 const port = 5000 // Use the PORT environment variable if it exists
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
+const notificationWSS = new WebSocket.Server({ port: 8081 });
+
 var cors = require('cors');
 const User = require('./Models/User.js')
 const Question = require('./Models/Questions.js')
@@ -13,6 +15,8 @@ connectToMongo()
 const connections = {}; // Store user connections based on uid
 const waitingQueue = []; // Queue for users waiting to connect
 const activeMatches = {}; // Track active matches { matchId: [uid1, uid2] }
+const notificationConnections = {};
+
 
 wss.on('connection', (ws) => {
     let uid; // Track the current user's UID
@@ -54,7 +58,7 @@ wss.on('connection', (ws) => {
                 // Mark the match as active
                 const matchId = `${uid}-${opponentUid}`;
                 activeMatches[matchId] = [uid, opponentUid];
-               
+
                 // Send the question to the frontend
                 // Update isFree to false for both users
                 await User.updateMany({ _id: { $in: [uid, opponentUid] } }, { $set: { isFree: false } });
@@ -135,14 +139,71 @@ wss.on('connection', (ws) => {
         }
     });
 });
+notificationWSS.on('connection', (ws, req) => {
+    let uid;
+
+    ws.on('message', (message) => {
+        const data = JSON.parse(message);
+        if (data.type === 'register') {
+            // Register the user connection if not already registered
+            uid = data.uid;
+            if (!notificationConnections[uid]) {
+                notificationConnections[uid] = ws;
+                console.log(`User ${uid} connected for notifications`);
+            }
+        } else if (data.type === 'unsubscribe') {
+            // Remove the user from notifications
+            if (uid && notificationConnections[uid]) {
+                delete notificationConnections[uid];
+                console.log(`User ${uid} unsubscribed from notifications`);
+            }
+        } else if(data.type === 'notification') {
+            console.log(data)
+            // Send a notification to the user
+            sendNotification(data.uid, data.message);
+        }
+    });
+
+    ws.on('close', () => {
+        if (uid && notificationConnections[uid]) {
+            delete notificationConnections[uid];
+            console.log(`User ${uid} disconnected from notifications`);
+        }
+    });
+});
+
+const sendNotification = (uid, message) => {
+    const userWs = notificationConnections[uid];
+    if (userWs && userWs.readyState === WebSocket.OPEN) {
+        userWs.send(JSON.stringify({ type: 'notification', message }));
+    }
+};
+
+// Function to broadcast notifications to all connected users
+const broadcastNotification = (message) => {
+    Object.values(notificationConnections).forEach((ws) => {
+        if (ws.readyState === WebSocket.OPEN) {
+            ws.send(JSON.stringify({ type: 'notification', message }));
+        }
+    });
+};
+
+// Example: Send notifications based on some event
+setInterval(() => {
+    broadcastNotification('This is a live update for all users!');
+}, 30000); // Broadcast every 30 seconds
+
+
 
 console.log('WebSocket server running on http://localhost:8080');
+console.log('Notification WebSocket server running on http://localhost:8081');
 
 
 app.use(cors());
 app.use(express.json());
 app.use('/api/auth', require("./Routes/auth"))
 app.use('/api/judgeapi', require("./Routes/judgeapi"))
+app.use('/api/user', require("./Routes/user"))
 
 
 app.listen(port, () => {

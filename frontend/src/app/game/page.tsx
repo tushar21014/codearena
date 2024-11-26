@@ -78,10 +78,12 @@ export default function Game() {
             {opponentUid && <p>Playing against: {opponentUid}</p>}
             {isReady && question && (
                 <div className='flex flex-row w-[90vw] m-auto'>
+                    <div className='pr-[10vw] w-1/2'>
                     <div
-                        className="w-1/2"
+                        className="text-justify"
                         dangerouslySetInnerHTML={{ __html: question.Content }}
                     ></div>
+                    </div>
                     <div className='w-1/2'> <CodeEditor /></div>
 
                 </div>

@@ -17,8 +17,8 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    role:{
-        type:String,
+    role: {
+        type: String,
         default: "user",
         required: true
     },
@@ -27,13 +27,13 @@ const userSchema = new Schema({
     //     required: true
     // },
     verify_token: {
-        type : String
+        type: String
     },
-    isOnline:{
+    isOnline: {
         type: Boolean,
         default: false,
     },
-    isFree:{
+    isFree: {
         type: Boolean,
         default: true,
         required: true
@@ -44,11 +44,10 @@ const userSchema = new Schema({
         required: true
 
     },
-    friends: {
-        type: Array,
-        default: [],
-        required: true
-    },
+    friends: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Users'
+    }]
 });
 
 const user = mongoose.model('Users', userSchema)
