@@ -17,6 +17,9 @@ const waitingQueue = []; // Queue for users waiting to connect
 const activeMatches = {}; // Track active matches { matchId: [uid1, uid2] }
 const notificationConnections = {};
 
+const activeGames = {}; // To store active game sessions
+const waitingPlayers = {}; // To store players waiting for a response
+
 
 wss.on('connection', (ws) => {
     let uid; // Track the current user's UID
@@ -111,6 +114,66 @@ wss.on('connection', (ws) => {
                 }
             }
         }
+        else if (data.type === 'friendGame') {
+            // Fetch user by UID
+            const user = await User.findOne({ _id: data.uid });
+            if (!user) {
+                ws.send(JSON.stringify({ type: 'error', message: 'User not found' }));
+                return;
+            }
+        
+            uid = data.uid;
+        
+            if (connections[uid]) {
+                ws.send(JSON.stringify({ type: 'error', message: 'You are already connected' }));
+                return;
+            }
+        
+            connections[uid] = ws; // Map the WebSocket to this UID
+            console.log(`${uid} joined`);
+            console.log(activeGames);
+            if (activeGames[data.sessionId]) {
+                const players = activeGames[data.sessionId]; // Array of players
+                console.log(players);
+                const opponentUid = players.find((player) => player !== uid); // Get the opponent's UID
+                console.log(opponentUid);
+                if (!opponentUid) {
+                    ws.send(JSON.stringify({ type: 'error', message: 'Opponent not found in the game session' }));
+                    return;
+                }
+        
+                const opponentWs = connections[opponentUid];
+                // console.log(opponentWs);
+                if (!opponentWs || opponentWs.readyState !== WebSocket.OPEN) {
+                    ws.send(JSON.stringify({ type: 'error', message: 'Opponent is not connected' }));
+                    return;
+                }
+        
+                console.log(`Opponent UID: ${opponentUid}`);
+                console.log(`Connections:`, connections);
+        
+                // Notify both users that the game is ready
+                const questions = await Question.aggregate([{ $sample: { size: 1 } }]);
+        
+                ws.send(JSON.stringify({ type: 'ready', opponentUid, question: questions[0] }));
+                opponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid, question: questions[0] }));
+        
+                // Mark the match as active
+                const matchId = `${uid}-${opponentUid}`;
+                activeMatches[matchId] = [uid, opponentUid];
+        
+                // Update isFree to false for both users
+                await User.updateMany({ _id: { $in: [uid, opponentUid] } }, { $set: { isFree: false } });
+        
+                console.log(activeMatches);
+            } else {
+                // Add the user to the waiting queue
+                waitingQueue.push(uid);
+                console.log("You are in the queue");
+                ws.send(JSON.stringify({ type: 'status', message: 'Waiting for an opponent...' }));
+            }
+        }
+        
     });
 
     ws.on('close', async () => {
@@ -139,28 +202,87 @@ wss.on('connection', (ws) => {
         }
     });
 });
+
 notificationWSS.on('connection', (ws, req) => {
     let uid;
 
     ws.on('message', (message) => {
         const data = JSON.parse(message);
+
         if (data.type === 'register') {
-            // Register the user connection if not already registered
             uid = data.uid;
             if (!notificationConnections[uid]) {
                 notificationConnections[uid] = ws;
                 console.log(`User ${uid} connected for notifications`);
             }
         } else if (data.type === 'unsubscribe') {
-            // Remove the user from notifications
             if (uid && notificationConnections[uid]) {
                 delete notificationConnections[uid];
                 console.log(`User ${uid} unsubscribed from notifications`);
             }
-        } else if(data.type === 'notification') {
-            console.log(data)
-            // Send a notification to the user
-            sendNotification(data.uid, data.message);
+        } else if (data.type === 'challenge') {
+            // First player sends a challenge
+            const targetWs = notificationConnections[data.to];
+            if (targetWs && targetWs.readyState === WebSocket.OPEN) {
+                // Notify the challenged player
+                targetWs.send(
+                    JSON.stringify({
+                        type: 'challenge',
+                        from: data.from,
+                        to: data.to,
+                        message: data.message,
+                    })
+                );
+
+                // Store the first player in waitingPlayers
+                waitingPlayers[data.from] = data.to;
+            }
+        } else if (data.type === 'challengeResponse') {
+            if (data.accept) {
+                console.log(data);
+
+                // Second player accepts the challenge
+                const challenger = data.from; // The player who initiated the challenge
+                const accepter = data.to; // The player who accepted the challenge
+
+                // Create a unique game session
+                if (waitingPlayers[challenger] !== accepter) {
+                    const sessionId = `game-${Date.now()}-${challenger}-${accepter}`;
+                    activeGames[sessionId] = [challenger, accepter];
+
+                    console.log(`Game session started: ${sessionId}`);
+
+                    // Notify both players to start the game and include the sessionId
+                    [challenger, accepter].forEach((playerId) => {
+                        const playerWs = notificationConnections[playerId];
+                        if (playerWs && playerWs.readyState === WebSocket.OPEN) {
+                            playerWs.send(
+                                JSON.stringify({
+                                    type: 'startGame',
+                                    sessionId, // Include the sessionId in the message
+                                    message: `Game session started!`,
+                                })
+                            );
+                        }
+                    });
+
+                    console.log(activeGames);
+                }
+                // Remove from waitingPlayers
+                delete waitingPlayers[challenger];
+            } else {
+                // Notify the challenger that the challenge was declined
+                const challengerWs = notificationConnections[data.from];
+                if (challengerWs && challengerWs.readyState === WebSocket.OPEN) {
+                    challengerWs.send(
+                        JSON.stringify({
+                            type: 'challengeDeclined',
+                            message: `Your challenge was declined.`,
+                        })
+                    );
+                }
+                delete waitingPlayers[data.from];
+            }
         }
     });
 
@@ -168,6 +290,14 @@ notificationWSS.on('connection', (ws, req) => {
         if (uid && notificationConnections[uid]) {
             delete notificationConnections[uid];
             console.log(`User ${uid} disconnected from notifications`);
+
+            // Remove from waitingPlayers if disconnected
+            for (const [challenger, accepter] of Object.entries(waitingPlayers)) {
+                if (challenger === uid || accepter === uid) {
+                    delete waitingPlayers[challenger];
+                    console.log(`Removed waiting player: ${uid}`);
+                }
+            }
         }
     });
 });

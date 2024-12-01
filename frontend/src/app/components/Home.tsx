@@ -1,16 +1,15 @@
-"use client"
-import React, { useEffect, useState } from 'react'
-import Nav from './Nav'
+import React, { useEffect, useState } from 'react';
+import Nav from './Nav';
 import Link from "next/link";
 import { useWebSocket } from '../WebSocketContext';
-
+import { useRouter } from 'next/navigation';
 
 const HomePage: React.FC = () => {
     const notificationSocket = useWebSocket();
-
-    const [friends, setFriends] = useState<string[]>([])
-    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
-
+    const Router = useRouter();
+    const [friends, setFriends] = useState<any[]>([]);
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const [challenge, setChallenge] = useState<any | null>(null); // To track incoming challenge
 
     useEffect(() => {
         if (notificationSocket) {
@@ -18,6 +17,9 @@ const HomePage: React.FC = () => {
                 const data = JSON.parse(event.data);
                 if (data.type === 'notification') {
                     console.log('Notification:', data.message);
+                } else if (data.type === 'challenge') {
+                    // Handle incoming challenge
+                    setChallenge(data);
                 }
             };
 
@@ -27,68 +29,115 @@ const HomePage: React.FC = () => {
         }
     }, [notificationSocket]);
 
-
     const getFriends = async () => {
         const response = await fetch('http://localhost:5000/api/user/getFriends', {
             method: 'GET',
             headers: {
                 'auth-Token': localStorage.getItem('auth-Token') || ''
             }
-        })
-        const data = await response.json()
-        setFriends(data)
-        console.log(data)
-    }
+        });
+        const data = await response.json();
+        setFriends(data);
+        console.log(data);
+    };
 
-    const sendNotification = (id: string) => {
+    const sendChallenge = (id: string) => {
+        console.log('Sending challenge to:', id);
         if (notificationSocket) {
             const message = {
-                type: 'notification',
-                message: 'This is a test notification sent from ' + localStorage.getItem('email'),
-                uid: id
+                type: 'challenge',
+                from: localStorage.getItem('id'),
+                to: id,
+                message: 'You have been challenged!',
             };
+            Router.push('/friendChallenge');
             notificationSocket.send(JSON.stringify(message));
         }
     };
+    
+    const respondToChallenge = (accept: Boolean) => {
+        console.log('Responding to challenge:', accept);
+        if (notificationSocket && challenge) {
+            const message = {
+                type: 'challengeResponse',
+                from: challenge.to,
+                to: challenge.from,
+                accept,
+            };
+            notificationSocket.send(JSON.stringify(message));
+            if (accept) {
+                console.log('Challenge accepted. Waiting for game...');
+                notificationSocket.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    if (data.type === 'startGame') {
+                        console.log('Game session started:', data.sessionId);
+                        localStorage.setItem('sessionId', data.sessionId);
+                        // Redirect to the game page
+                        Router.push('/friendChallenge');
+                    }
+                };
+            } else {
+                setChallenge(null); // Reset challenge if declined
+            }
+        }
+    };
+    
 
     useEffect(() => {
         if (localStorage.getItem('auth-Token')) {
-            setIsLoggedIn(true)
+            setIsLoggedIn(true);
         }
         getFriends();
-
-    }, [])
+    }, []);
 
     return (
         <div>
             <Nav />
-            <div className='mt-[10vh]'>
-                {isLoggedIn ? <>
-                    {friends && (
-                        <div>
-                            Friends
-                            <ul className='flex'>
-                                {friends.map((friend) => (
-                                    <li onClick={() => sendNotification(friend._id)} key={friend} className={`text-xl text-black cursor-pointer ${friend.isOnline ? 'border-b-2 border-green-500' : ''}`}>{friend.username}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-
-                    {/* <button onClick={sendNotification}>Send Notification</button> */}
-
-                </> : <></>}
-
+            <div className="mt-[10vh]">
+                {isLoggedIn ? (
+                    <>
+                        {friends && (
+                            <div>
+                                Friends
+                                <ul className="flex flex-col">
+                                    {friends.map((friend) => (
+                                        <li key={friend._id} className="text-xl text-black cursor-pointer">
+                                            <span>{friend.username}</span>
+                                            {friend.isOnline && (
+                                                <button
+                                                    onClick={() => sendChallenge(friend._id)}
+                                                    className="ml-2 bg-blue-500 text-white px-2 py-1 rounded"
+                                                >
+                                                    Challenge
+                                                </button>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </>
+                ) : null}
             </div>
-            <div className='mt-[10vh]'>
-
-                <Link href={"/game"}>
-                    <button type="button" className=" text-white mt-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Play Online</button>
-                </Link>
-
-            </div>
+            {challenge && (
+                <div className="fixed bottom-10 right-10 bg-gray-800 text-white p-4 rounded">
+                    <p>{challenge.message}</p>
+                    <button
+                        onClick={() => respondToChallenge(true)}
+                        className="bg-green-500 px-4 py-2 mr-2 rounded"
+                    >
+                        Accept
+                    </button>
+                    <button
+                        onClick={() => respondToChallenge(false, )}
+                        className="bg-red-500 px-4 py-2 rounded"
+                    >
+                        Decline
+                    </button>
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default HomePage
+export default HomePage;

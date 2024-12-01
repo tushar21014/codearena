@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import CodeEditor from '../components/CodeEditor';
 
-export default function Game() {
+export default function friendChallenge() {
     const [uid, setUid] = useState('');
     const [status, setStatus] = useState('Connecting...');
     const [isReady, setIsReady] = useState(false);
@@ -30,7 +30,7 @@ export default function Game() {
         wsRef.current = ws;
 
         ws.onopen = () => {
-            ws.send(JSON.stringify({ type: 'join', uid: userUid }));
+            ws.send(JSON.stringify({ type: 'friendGame',uid: localStorage.getItem('id'), sessionId: localStorage.getItem('sessionId') }));
         };
 
         ws.onmessage = (event) => {
@@ -54,7 +54,7 @@ export default function Game() {
         };
 
         ws.onclose = () => {
-            setStatus('Connection closed. Refresh to reconnect.');
+            setStatus('Connection closed. Refresh to reconnect friend Challenge page.');
         };
 
         return () => {
