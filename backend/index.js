@@ -121,14 +121,14 @@ wss.on('connection', (ws) => {
                 ws.send(JSON.stringify({ type: 'error', message: 'User not found' }));
                 return;
             }
-        
+
             uid = data.uid;
-        
+            
             if (connections[uid]) {
                 ws.send(JSON.stringify({ type: 'error', message: 'You are already connected' }));
                 return;
             }
-        
+            
             connections[uid] = ws; // Map the WebSocket to this UID
             console.log(`${uid} joined`);
             console.log(activeGames);
@@ -137,6 +137,12 @@ wss.on('connection', (ws) => {
                 console.log(players);
                 const opponentUid = players.find((player) => player !== uid); // Get the opponent's UID
                 console.log(opponentUid);
+                const opponentUser = await User.findById(opponentUid);
+                if(!opponentUser.isFree)
+                {
+                    ws.send(JSON.stringify({ type: 'error', message: 'Opponent is busy' }));
+                    return;
+                }
                 if (!opponentUid) {
                     ws.send(JSON.stringify({ type: 'error', message: 'Opponent not found in the game session' }));
                     return;
@@ -150,7 +156,7 @@ wss.on('connection', (ws) => {
                 }
         
                 console.log(`Opponent UID: ${opponentUid}`);
-                console.log(`Connections:`, connections);
+                // console.log(`Connections:`, connections);
         
                 // Notify both users that the game is ready
                 const questions = await Question.aggregate([{ $sample: { size: 1 } }]);
@@ -206,13 +212,15 @@ wss.on('connection', (ws) => {
 notificationWSS.on('connection', (ws, req) => {
     let uid;
 
-    ws.on('message', (message) => {
+    ws.on('message', async (message) => {
         const data = JSON.parse(message);
 
         if (data.type === 'register') {
             uid = data.uid;
             if (!notificationConnections[uid]) {
                 notificationConnections[uid] = ws;
+                const user = await User.findByIdAndUpdate(uid, { isFree: true });
+                broadcastFriendStatus(uid, true, true);
                 console.log(`User ${uid} connected for notifications`);
             }
         } else if (data.type === 'unsubscribe') {
@@ -289,6 +297,7 @@ notificationWSS.on('connection', (ws, req) => {
     ws.on('close', () => {
         if (uid && notificationConnections[uid]) {
             delete notificationConnections[uid];
+            broadcastFriendStatus(uid, true, false);
             console.log(`User ${uid} disconnected from notifications`);
 
             // Remove from waitingPlayers if disconnected
@@ -298,6 +307,7 @@ notificationWSS.on('connection', (ws, req) => {
                     console.log(`Removed waiting player: ${uid}`);
                 }
             }
+
         }
     });
 });
@@ -308,6 +318,21 @@ const sendNotification = (uid, message) => {
         userWs.send(JSON.stringify({ type: 'notification', message }));
     }
 };
+
+const broadcastFriendStatus = (friendId, isOnline, isFree) => {
+    const data = JSON.stringify({
+        type: 'statusUpdate',
+        friendId,
+        isFree,
+        isOnline 
+    });
+    Object.values(notificationConnections).forEach((ws) => {
+        if (ws.readyState === WebSocket.OPEN) {
+            ws.send(data);
+        }
+    });
+};
+
 
 // Function to broadcast notifications to all connected users
 const broadcastNotification = (message) => {

@@ -20,6 +20,18 @@ const HomePage: React.FC = () => {
                 } else if (data.type === 'challenge') {
                     // Handle incoming challenge
                     setChallenge(data);
+                } else if(data.type === 'statusUpdate')
+                {
+                    console.log(data)
+                    setFriends((prev) => {
+                        return prev.map((friend) => {
+                            if (friend._id === data.friendId) {
+                                return { ...friend, isOnline: data.isOnline, isFree: data.isFree };
+                            }
+                            return friend;
+                        });
+                    })
+                    console.log(friends)
                 }
             };
 
@@ -103,7 +115,7 @@ const HomePage: React.FC = () => {
                                     {friends.map((friend) => (
                                         <li key={friend._id} className="text-xl text-black cursor-pointer">
                                             <span>{friend.username}</span>
-                                            {friend.isOnline && (
+                                            {friend.isOnline && friend.isFree && (
                                                 <button
                                                     onClick={() => sendChallenge(friend._id)}
                                                     className="ml-2 bg-blue-500 text-white px-2 py-1 rounded"
