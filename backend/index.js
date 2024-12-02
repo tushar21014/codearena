@@ -282,11 +282,10 @@ notificationWSS.on('connection', (ws, req) => {
                 // Notify the challenger that the challenge was declined
                 console.log("The opponent: " + data.to)
                 console.log("The Homo: " + data.from)
-                // const challengerWs = notificationConnections[data.from];
                 const challengerWs = connections[data.from];
+                const recieverWs = notificationConnections[data.to];
                 
                 if (challengerWs && challengerWs.readyState === WebSocket.OPEN) {
-                    console.log("challenger ws is found")
                     challengerWs.send(
                         JSON.stringify({
                             type: 'challengeDeclined',
@@ -294,9 +293,16 @@ notificationWSS.on('connection', (ws, req) => {
                         })
                     );
                 }
-                else{
-                    console.log("cha;llenger not found")
+
+                if (recieverWs && recieverWs.readyState === WebSocket.OPEN) {
+                    recieverWs.send(
+                        JSON.stringify({
+                            type: 'challengeDeclined',
+                            message: `Your challenge was declined.`,
+                        })
+                    );
                 }
+
                 delete waitingPlayers[data.from];
             }
         }

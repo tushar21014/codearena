@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import CodeEditor from '../components/CodeEditor';
+import { useRouter } from 'next/navigation';
 
 export default function friendChallenge() {
     const [uid, setUid] = useState('');
@@ -19,7 +20,7 @@ export default function friendChallenge() {
     const [question, setQuestion] = useState<Question | null>(null);
     // Ref to store the WebSocket instance
     const wsRef = useRef<WebSocket | null>(null);
-
+    const Router = useRouter();
     useEffect(() => {
         // Generate a random UID for testing or replace it with real auth logic
         // localStorage.setItem('uid', userUid);
@@ -50,6 +51,10 @@ export default function friendChallenge() {
                 setWinner(data.winner);
                 setStatus(data.winner === userUid ? 'You Win!' : 'You Lose!');
                 setIsReady(false);
+            } else if (data.type === 'challengeDeclined'){
+                setStatus('Challenge Declined');
+                console.log('Challenge declined:', data.message);
+                Router.push('/'); // Redirect to home page
             }
         };
 

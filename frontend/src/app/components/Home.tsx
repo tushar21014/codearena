@@ -15,6 +15,10 @@ const HomePage: React.FC = () => {
     const { calltoast } = useToastContext();
 
     useEffect(() => {
+        if(localStorage.getItem('sessionId')){
+            localStorage.removeItem('sessionId');
+        }
+
         if (notificationSocket) {
             notificationSocket.onmessage = (event) => {
                 const data = JSON.parse(event.data);
@@ -51,7 +55,6 @@ const HomePage: React.FC = () => {
                 'auth-Token': localStorage.getItem('auth-Token') || ''
             }
         });
-        calltoast("Friends Loaded", "success");
         const data = await response.json();
         setFriends(data);
         console.log(data);
@@ -99,10 +102,10 @@ const HomePage: React.FC = () => {
                 notificationSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
                     if (data.type === 'challengeDeclined') {
-                        console.log("Challenge Declined");
-                        Router.push('/'); // Redirect to home page
+                        console.log("I AM WORKINGGG");
+                        notificationSocket.send(JSON.stringify({ type: 'register', uid: localStorage.getItem('id') }));
                     }
-                };
+                }
                 setChallenge(null); // Reset the challenge state
             }
         }
