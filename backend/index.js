@@ -6,6 +6,7 @@ const port = 5000 // Use the PORT environment variable if it exists
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
 const notificationWSS = new WebSocket.Server({ port: 8081 });
+const Stub = require('./Models/Stubs');
 
 var cors = require('cors');
 const User = require('./Models/User.js')
@@ -52,11 +53,16 @@ wss.on('connection', (ws) => {
                 const opponentWs = connections[opponentUid];
 
                 // Notify both users that the game is ready
-                const questions = await Question.aggregate([{ $sample: { size: 1 } }]);
+                const questions = await Question.aggregate([
+                    { $match: { number: { $lt: 97 } } },
+                    { $sample: { size: 1 } }
+                ]);
+                const stub = await Stub.findOne({ question: questions[0]._id });
 
 
-                ws.send(JSON.stringify({ type: 'ready', opponentUid, question: questions[0] }));
-                opponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid, question: questions[0] }));
+
+                ws.send(JSON.stringify({ type: 'ready', opponentUid, question: questions[0], stubCode: stub }));
+                opponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid, question: questions[0], stubCode: s }));
 
                 // Mark the match as active
                 const matchId = `${uid}-${opponentUid}`;
@@ -160,9 +166,15 @@ wss.on('connection', (ws) => {
         
                 // Notify both users that the game is ready
                 const questions = await Question.aggregate([{ $sample: { size: 1 } }]);
+                console.log(questions[0]._id);
+
+                const stub = await Stub.find({ question: questions[0]._id });
+                // console.log(stub);
+                // const stub = await Stub.findOne({ question: questions[0]._id });
+                // console.log(stub)
         
-                ws.send(JSON.stringify({ type: 'ready', opponentUid, question: questions[0] }));
-                opponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid, question: questions[0] }));
+                ws.send(JSON.stringify({ type: 'ready', opponentUid, question: questions[0], stubCode: stub }));
+                opponentWs.send(JSON.stringify({ type: 'ready', opponentUid: uid, question: questions[0], stubCode: stub }));
         
                 // Mark the match as active
                 const matchId = `${uid}-${opponentUid}`;

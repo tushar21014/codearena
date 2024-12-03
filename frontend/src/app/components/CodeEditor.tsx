@@ -1,6 +1,6 @@
 "use client";
 import { debouncedLintCodeWithRuff } from "./linter/pythonLinter";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { python } from "@codemirror/lang-python";
@@ -10,7 +10,7 @@ import { autocompletion } from "@codemirror/autocomplete";
 import { cpp } from "@codemirror/lang-cpp";
 import axios from "axios";
 
-const CodeEditor = () => {
+const CodeEditor = ({stub}: {stub: any}) => {
   const [code, setCode] = useState<string>(""); // Code content
   const [language, setLanguage] = useState<string>("javascript"); // Default language
   const [output, setOutput] = useState<string>(""); // Execution output
@@ -81,6 +81,12 @@ const CodeEditor = () => {
     }
   };
 
+  useEffect(() => {
+    console.log("I am from code editor: " + stub[0].cpp)
+    // console.log("I am from code editor: " + stub)
+  }
+  , [stub])
+
   return (
     <div>
       {/* Language Selection */}
@@ -121,35 +127,18 @@ const CodeEditor = () => {
 
             switch (language) {
               case "javascript":
-                // Linter for JavaScript
-                lines.forEach((line, i) => {
-                  if (line.includes("console.log")) {
-                    diagnostics.push({
-                      from: view.state.doc.line(i + 1).from,
-                      to: view.state.doc.line(i + 1).to,
-                      severity: "warning",
-                      message: "Avoid using console.log in production code.",
-                    });
-                  }
-                });
                 break;
 
               case "python":
                 // Use debounced Python linter from Ruff
-                debouncedLintCodeWithRuff(code, view);
+                setCode(stub[0].python)
+                // debouncedLintCodeWithRuff(code, view);
                 break;
-
-              case "java":
+                
+                case "java":
+                setCode(stub[0].java)
                 // Linter for Java
                 lines.forEach((line, i) => {
-                  if (line.includes("System.out.println")) {
-                    diagnostics.push({
-                      from: view.state.doc.line(i + 1).from,
-                      to: view.state.doc.line(i + 1).to,
-                      severity: "warning",
-                      message: "Avoid using System.out.println in production code.",
-                    });
-                  }
                   if (line.includes("class ") && !line.trim().endsWith("{")) {
                     diagnostics.push({
                       from: view.state.doc.line(i + 1).from,
@@ -164,24 +153,7 @@ const CodeEditor = () => {
               case "cpp":
               case "c":
                 // Linter for C++/C
-                lines.forEach((line, i) => {
-                  if (line.includes("printf(")) {
-                    diagnostics.push({
-                      from: view.state.doc.line(i + 1).from,
-                      to: view.state.doc.line(i + 1).to,
-                      severity: "warning",
-                      message: "Avoid using printf in modern C++ (consider std::cout).",
-                    });
-                  }
-                  if (line.includes("using namespace std;")) {
-                    diagnostics.push({
-                      from: view.state.doc.line(i + 1).from,
-                      to: view.state.doc.line(i + 1).to,
-                      severity: "warning",
-                      message: "Avoid using 'using namespace std;' in header files.",
-                    });
-                  }
-                });
+                setCode(stub[0].cpp)
                 break;
 
               default:

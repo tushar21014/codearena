@@ -10,6 +10,7 @@ export default function friendChallenge() {
     const [isReady, setIsReady] = useState(false);
     const [winner, setWinner] = useState(null);
     const [opponentUid, setOpponentUid] = useState(null);
+    const [stubCode, setStubCode] = useState([]);
     interface Question {
         Content: string;
         Accuracy: string;
@@ -40,6 +41,7 @@ export default function friendChallenge() {
             if (data.type === 'status') {
                 setStatus(data.message);
             } else if (data.type === 'ready') {
+                setStubCode(data.stubCode);
                 ws.send(JSON.stringify({ type: 'ready', uid: userUid }));
                 setOpponentUid(data.opponentUid);
                 setStatus('Game Started!');
@@ -88,7 +90,7 @@ export default function friendChallenge() {
                         dangerouslySetInnerHTML={{ __html: question.Content }}
                     ></div>
                     </div>
-                    <div className='w-1/2'> <CodeEditor /></div>
+                    <div className='w-1/2'> <CodeEditor stub={stubCode as any} /></div>
 
                 </div>
             )}

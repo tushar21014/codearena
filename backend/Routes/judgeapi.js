@@ -5,6 +5,11 @@ const bodyParser = require("body-parser");
 const fetchuser = require('../middleware/fetchuser');
 const router = express.Router();
 const User = require('../Models/User');
+const Stub = require('../Models/Stubs');
+const Question = require('../Models/Questions');
+const csv = require('csv-parser');
+const fs = require('fs');
+
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -45,5 +50,52 @@ router.get("/online", fetchuser, async (req, res) => {
   }
 });
 
+
+// const uploadStubs = async (csvFilePath) => {
+//   try {
+//       const stubsData = [];
+
+//       // Parse the CSV file
+//       fs.createReadStream(csvFilePath)
+//           .pipe(csv())
+//           .on('data', (row) => {
+//               stubsData.push(row);
+//           })
+//           .on('end', async () => {
+//               console.log('CSV file successfully processed.');
+
+//               for (const stub of stubsData) {
+//                   const { question_id, cpp, python, java } = stub;
+
+//                   // Find the question by question_id
+//                   const question = await Question.findById(question_id);
+
+//                   if (!question) {
+//                       console.error(`Question not found for ID: ${question_id}`);
+//                       continue;
+//                   }
+
+//                   // Create a new stub entry
+//                   const newStub = new Stub({
+//                       question: question._id,
+//                       cpp,
+//                       python,
+//                       java,
+//                   });
+
+//                   await newStub.save();
+//                   console.log(`Stub saved for question ID: ${question_id}`);
+//               }
+
+//               mongoose.connection.close();
+//           });
+//   } catch (error) {
+//       console.error('Error uploading stubs:', error);
+//   }
+// };
+
+// // Path to your CSV file
+// const csvFilePath = 'C:\\Users\\tg210\\OneDrive\\Desktop\\Codes\\vips sem1\\CodeArena\\updatedStubs.csv';
+// uploadStubs(csvFilePath);
 
 module.exports = router;

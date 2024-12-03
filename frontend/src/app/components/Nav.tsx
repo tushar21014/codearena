@@ -13,10 +13,26 @@ const Nav = () => {
     }
   }, []);
 
-  const handleLogout = () => {
-    localStorage.clear();
-    setIsLoggedIn(false);
-    router.push('/login');
+  const handleLogout = async () => {
+    
+    try {
+      const handle = await fetch('http://localhost:5000/api/user/logout', {
+        method: 'GET',
+        headers: {
+          'auth-Token': localStorage.getItem('auth-Token') || ''
+        }
+      });
+
+      localStorage.clear();
+      setIsLoggedIn(false);
+      router.push('/login');
+
+    } catch (error) {
+      console.error(error);
+      
+    }
+
+
   }
   return (
     <div>

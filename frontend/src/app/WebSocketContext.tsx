@@ -11,7 +11,7 @@ export const WebSocketProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         setNotificationSocket(socket);
 
         socket.onopen = () => {
-            const uid = localStorage.getItem('id') || 'user123';
+            const uid = localStorage.getItem('id');
             socket.send(JSON.stringify({ type: 'register', uid }));
         };
 

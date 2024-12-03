@@ -297,4 +297,15 @@ router.put('/changePass/:id/:token', async (req, res) => {
   }
 });
 
+router.get('/logout', fetchuser, async (req, res) => {
+  try {
+    let userId = req.user;
+    console.log(userId)
+    const user = await User.findByIdAndUpdate(userId, { isOnline: false, isFree: true });
+    res.send({ success: true, message: "Logged Out Successfully" });
+  } catch (error) {
+    res.send({ success: false, message: "Internal Server Error" });
+    console.log(error)
+  }
+});
 module.exports = router;

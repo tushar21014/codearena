@@ -11,3 +11,5 @@
 */.env.staging
 */.env.local
 */.next
+*./updatedStubs.csv
+*./stubs.csv
